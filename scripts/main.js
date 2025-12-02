@@ -7,6 +7,11 @@ const sidebarLinks = document.querySelectorAll('.sidebar__link');
 let isScrolling = false;
 let currentSectionIndex = 0;
 
+// Debug: Check if sidebar links exist
+if (sidebarLinks.length === 0) {
+  console.warn('No sidebar links found');
+}
+
 // Get section order
 const sectionIds = Array.from(sections).map(s => s.id);
 
@@ -151,20 +156,91 @@ window.addEventListener('wheel', (e) => {
   }, 1000);
 }, { passive: false });
 
-// Initialize: Show hero section by default
-showSection('hero');
+// Get current page type
+const currentPage = document.body.getAttribute('data-page');
 
-// Sidebar link clicks
-sidebarLinks.forEach(link => {
-  link.addEventListener('click', (e) => {
+// Initialize: Check for hash in URL, otherwise show hero section
+const initialHash = window.location.hash;
+if (initialHash && initialHash.length > 1) {
+  const targetSectionId = initialHash.substring(1);
+  // Check if this section exists on the page
+  const targetSection = document.getElementById(targetSectionId);
+  if (targetSection) {
+    showSection(targetSectionId);
+  } else {
+    showSection('hero');
+  }
+} else {
+  showSection('hero');
+}
+
+// Sidebar link clicks - use event delegation to ensure it works
+document.addEventListener('click', (e) => {
+  // Check if clicking on expand icon
+  const expandIcon = e.target.closest('.sidebar__expand');
+  if (expandIcon) {
     e.preventDefault();
-    const targetId = link.getAttribute('href');
-    if (targetId && targetId.startsWith('#')) {
-      const sectionId = targetId.substring(1);
+    e.stopPropagation();
+    const sidebarGroup = expandIcon.closest('.sidebar__group');
+    const parentLink = expandIcon.closest('.sidebar__link--parent');
+    if (sidebarGroup && parentLink) {
+      sidebarGroup.classList.toggle('expanded');
+      parentLink.classList.toggle('expanded');
+    }
+    return;
+  }
+  
+  const sidebarLink = e.target.closest('.sidebar__link');
+  if (!sidebarLink) return;
+  
+  e.preventDefault();
+  
+  // Handle parent links with children - toggle expand AND navigate
+  if (sidebarLink.classList.contains('sidebar__link--parent')) {
+    const sidebarGroup = sidebarLink.closest('.sidebar__group');
+    if (sidebarGroup) {
+      sidebarGroup.classList.toggle('expanded');
+      sidebarLink.classList.toggle('expanded');
+    }
+  }
+  
+  const targetId = sidebarLink.getAttribute('href');
+  if (targetId && targetId.startsWith('#')) {
+    const sectionId = targetId.substring(1);
+    
+    // Handle child links - navigate to projects section and scroll to project
+    if (sidebarLink.classList.contains('sidebar__link--child')) {
+      // Expand parent group if not already expanded
+      const sidebarGroup = sidebarLink.closest('.sidebar__group');
+      if (sidebarGroup && !sidebarGroup.classList.contains('expanded')) {
+        sidebarGroup.classList.add('expanded');
+        const parentLink = sidebarGroup.querySelector('.sidebar__link--parent');
+        if (parentLink) parentLink.classList.add('expanded');
+      }
+      
+      // Navigate to projects section first
+      showSection('projects', false);
+      
+      // Then scroll to the specific project
+      setTimeout(() => {
+        const targetElement = document.getElementById(sectionId);
+        const projectsSection = document.getElementById('projects');
+        if (targetElement && projectsSection) {
+          const elementTop = targetElement.offsetTop - projectsSection.offsetTop;
+          projectsSection.scrollTo({
+            top: elementTop - 40,
+            behavior: 'smooth'
+          });
+        }
+      }, 300);
+    } else {
+      // Regular navigation
       showSection(sectionId);
     }
-  });
+  }
 });
+
+// Active sidebar link is now handled by showSection function for all pages
 
 // Prevent default scroll behavior for anchor links
 const navLinks = document.querySelectorAll('a[href^="#"]');

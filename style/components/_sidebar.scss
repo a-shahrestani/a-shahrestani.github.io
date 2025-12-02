@@ -5,14 +5,9 @@
   transform: translateY(-50%);
   z-index: 1000;
 
-  @include respond(md) {
-    left: $space-3;
-    transform: translateY(-50%) scale(0.9);
-  }
-
-  @include respond(sm) {
-    left: $space-2;
-    transform: translateY(-50%) scale(0.85);
+  // Hide sidebar below 1200px
+  @media (max-width: 1200px) {
+    display: none;
   }
 }
 
@@ -86,6 +81,87 @@
   
   &:hover::before {
     background: $primary-gradient;
+  }
+}
+
+.sidebar__group {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.sidebar__link--parent {
+  cursor: pointer;
+  
+  .sidebar__expand {
+    margin-left: auto;
+    font-size: 10px;
+    transition: transform $transition;
+  }
+  
+  &.expanded .sidebar__expand {
+    transform: rotate(180deg);
+  }
+}
+
+.sidebar__subnav {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+  margin-left: $space-4;
+  margin-top: 0;
+  padding-left: 0;
+  position: relative;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  transition: opacity $transition, max-height 0.3s ease, margin $transition, visibility $transition;
+  
+  // Vertical line for subnav
+  &::before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: $border;
+    opacity: 0.5;
+  }
+  
+  .sidebar__group.expanded & {
+    opacity: 1;
+    visibility: visible;
+    max-height: 500px;
+    margin-top: $space-3;
+    margin-bottom: $space-2;
+  }
+}
+
+.sidebar__link--child {
+  // Same styling as parent link
+  padding-left: $space-4;
+  font-size: 11px;
+  max-width: 180px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+  &::before {
+    // Smaller dot but same style as parent
+    width: 10px;
+    height: 10px;
+    left: 0;
+    transform: translateY(-50%);
+  }
+  
+  &:hover::before {
+    transform: translateY(-50%) scale(1.2);
+  }
+  
+  &.active::before {
+    transform: translateY(-50%) scale(1.1);
   }
 }
 

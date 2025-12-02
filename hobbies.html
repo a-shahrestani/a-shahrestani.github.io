@@ -10,32 +10,50 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style/main.css" />
 </head>
-<body data-page="hobbies">
+<body data-page="index">
+  <aside class="sidebar" aria-label="Section navigation">
+    <nav class="sidebar__nav">
+      <a href="#hero" class="sidebar__link active" data-section="hero">Overview</a>
+      <a href="#photo-essays" class="sidebar__link" data-section="photo-essays">Photo Essays</a>
+      <a href="#music-making" class="sidebar__link" data-section="music-making">Music & Making</a>
+    </nav>
+  </aside>
   <header class="nav">
-    <div class="container nav__inner">
+    <div class="nav__inner">
       <a href="index.html" class="nav__brand">Afshin Shahrestani</a>
       <nav class="nav__links" aria-label="Main navigation">
-        <a href="index.html#hero">Home</a>
+        <a href="index.html">Home</a>
         <a href="projects.html">Projects</a>
         <a href="hobbies.html">Hobbies</a>
         <a href="index.html#contact">Contact</a>
       </nav>
     </div>
   </header>
+
   <main>
-    <section class="section hero">
-      <div class="container">
-        <p class="eyebrow">Hobbies</p>
-        <h1>Personal projects, field notes, and albums.</h1>
-        <p class="lead">A rotating gallery of photos, music sketches, and travel logs.</p>
+    <section id="hero" class="hero section active">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <p class="eyebrow">Beyond Work</p>
+          <h1>Personal projects, <span class="text-gradient">field notes</span>, and albums.</h1>
+          <p class="lead">A rotating gallery of photos, music sketches, and travel logs. I document backcountry trips, analog photography experiments, and modular synth sketches.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#photo-essays">Photo essays</a>
+            <a class="btn btn--ghost" href="#music-making">Music & Making</a>
+          </div>
+        </div>
+        <div class="hero__image" aria-hidden="true">
+          <div class="hero__blob"></div>
+        </div>
       </div>
     </section>
 
-    <section class="section section--muted">
+    <section id="photo-essays" class="section section--muted">
       <div class="container">
         <div class="section__header">
+          <p class="eyebrow">Photography</p>
           <h2>Photo essays</h2>
-          <p>Curated albums from backcountry trips and city walks. Swap in your own assets later.</p>
+          <p class="section__lede">Curated albums from backcountry trips and city walks.</p>
         </div>
         <div class="projects__list">
           <article class="project">
@@ -58,11 +76,12 @@
       </div>
     </section>
 
-    <section class="section">
+    <section id="music-making" class="section">
       <div class="container">
         <div class="section__header">
+          <p class="eyebrow">Creative</p>
           <h2>Music and making</h2>
-          <p>Notes from modular synth patches, tiny desk mixes, and collaborations.</p>
+          <p class="section__lede">Notes from modular synth patches, tiny desk mixes, and collaborations.</p>
         </div>
         <div class="skills__grid">
           <article class="card"><h3>Modular sketches</h3><p>Weekly Eurorack improvisations recorded live.</p></article>
@@ -71,20 +90,8 @@
         </div>
       </div>
     </section>
-
-    <section class="section section--muted">
-      <div class="container contact">
-        <div class="contact__text">
-          <h2>Want to collaborate artistically-</h2>
-          <p>Open to showcasing work, playing shows, or contributing visuals and music.</p>
-        </div>
-        <div class="contact__actions">
-          <a class="btn btn--primary" href="mailto:ash.shahrestani@gmail.com">Reach out</a>
-          <a class="btn btn--ghost" href="index.html#hero">Back to portfolio</a>
-        </div>
-      </div>
-    </section>
   </main>
+
   <footer class="footer">
     <div class="container footer__inner">
       <p>&copy; <span id="year"></span> Afshin Shahrestani - Machine Learning Engineer</p>

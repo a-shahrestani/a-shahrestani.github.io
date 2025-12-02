@@ -13,7 +13,23 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: $space-4 0;
+  width: min(100% - 32px, $container-width);
+  margin: 0 auto;
+  padding: $space-4;
+  
+  // Add extra left padding for sidebar on all pages
+  padding-left: calc($space-4 + 120px) !important;
+  padding-right: $space-4 !important;
+  
+  // Remove sidebar space below 1200px (sidebar is hidden)
+  @media (max-width: 1200px) {
+    padding-left: $space-4 !important;
+  }
+  
+  @include respond(sm) {
+    padding-left: $space-3 !important;
+    padding-right: $space-3 !important;
+  }
 }
 
 .nav__brand {

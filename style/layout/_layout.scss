@@ -2,21 +2,17 @@ main {
   position: relative;
   height: 100vh;
   overflow: hidden;
-
-  // For detail pages, allow scrolling
-  body:not([data-page="index"]) & {
-    height: auto;
-    overflow: visible;
-  }
 }
 
 .container {
   width: min(100% - 32px, $container-width);
   margin: 0 auto;
   padding: 0 $space-4;
+  // Add extra left padding for sidebar on all pages
   padding-left: calc($space-4 + 120px);
 
-  @include respond(md) {
+  // Remove sidebar space below 1200px (sidebar is hidden)
+  @media (max-width: 1200px) {
     padding-left: $space-4;
   }
 
@@ -48,15 +44,6 @@ main {
     visibility: visible;
     position: relative;
     z-index: 1;
-  }
-
-  // For detail pages (projects.html, hobbies.html), sections should be visible by default
-  body:not([data-page="index"]) & {
-    opacity: 1;
-    visibility: visible;
-    position: relative;
-    min-height: auto;
-    height: auto;
   }
 
   // Sections that should start from top (experience, skills)

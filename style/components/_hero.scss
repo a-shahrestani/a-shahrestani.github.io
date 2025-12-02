@@ -42,20 +42,22 @@
   50% { border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%; }
 }
 
-// Hero section styling for detail pages
+// Hero section styling - consistent across all pages
 .section.hero {
-  text-align: center;
-  padding: $space-10 0 $space-8;
+  // Use same grid layout as home page
+  .hero__content {
+    h1 {
+      font-size: clamp(32px, 4vw, 56px);
+      margin: $space-3 0 $space-4;
+      line-height: 1.2;
+      font-weight: 700;
+    }
 
-  h1 {
-    font-size: clamp(36px, 5vw, 56px);
-    margin: $space-3 0 $space-4;
-    line-height: 1.2;
-  }
-
-  .lead {
-    max-width: 700px;
-    margin: 0 auto;
-    font-size: clamp(16px, 2vw, 20px);
+    .lead {
+      color: $text-muted;
+      max-width: 560px;
+      font-size: clamp(16px, 2vw, 18px);
+      line-height: 1.7;
+    }
   }
 }

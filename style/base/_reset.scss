@@ -9,11 +9,6 @@ html, body {
   overflow: hidden;
 }
 
-html:has(body:not([data-page="index"])), body:not([data-page="index"]) {
-  overflow: auto;
-  height: auto;
-}
-
 body {
   font-family: $font-family;
   color: $text;
@@ -21,10 +16,6 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-}
-
-body:not([data-page="index"]) {
-  overflow-y: auto;
 }
 
 // Custom scrollbar styling - smaller, dark theme

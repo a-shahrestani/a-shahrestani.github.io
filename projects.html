@@ -10,12 +10,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style/main.css" />
 </head>
-<body data-page="projects">
+<body data-page="index">
+  <aside class="sidebar" aria-label="Section navigation">
+    <nav class="sidebar__nav">
+      <a href="#hero" class="sidebar__link active" data-section="hero">Overview</a>
+      <a href="#projects" class="sidebar__link" data-section="projects">Projects</a>
+      <a href="#publications" class="sidebar__link" data-section="publications">Publications</a>
+    </nav>
+  </aside>
   <header class="nav">
-    <div class="container nav__inner">
+    <div class="nav__inner">
       <a href="index.html" class="nav__brand">Afshin Shahrestani</a>
       <nav class="nav__links" aria-label="Main navigation">
-        <a href="index.html#hero">Home</a>
+        <a href="index.html">Home</a>
         <a href="projects.html">Projects</a>
         <a href="hobbies.html">Hobbies</a>
         <a href="index.html#contact">Contact</a>
@@ -24,15 +31,24 @@
   </header>
 
   <main>
-    <section class="section hero">
-      <div class="container">
-        <p class="eyebrow">Projects & Publications</p>
-        <h1>Technical projects and research contributions.</h1>
-        <p class="lead">Case studies from production ML systems and applied research publications.</p>
+    <section id="hero" class="hero section active">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <p class="eyebrow">Projects & Publications</p>
+          <h1>Technical projects and <span class="text-gradient">research contributions</span>.</h1>
+          <p class="lead">Case studies from production ML systems and applied research publications.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#projects">View projects</a>
+            <a class="btn btn--ghost" href="#publications">Publications</a>
+          </div>
+        </div>
+        <div class="hero__image" aria-hidden="true">
+          <div class="hero__blob"></div>
+        </div>
       </div>
     </section>
 
-    <section class="section section--muted">
+    <section id="projects" class="section section--muted section--scrollable">
       <div class="container">
         <div class="section__header">
           <p class="eyebrow">Projects</p>
@@ -41,21 +57,17 @@
         <div class="projects__list">
           <article class="project">
             <div class="project__text">
-              <h3>Contextual Support Copilot</h3>
-              <p>Built an LLM-augmented assistant for support agents using retrieval-augmented generation, reducing average handle time by 22% across 2k+ daily tickets.</p>
+              <h3>Pavement Defect Detection & Geospatial Analysis</h3>
+              <p>Built end-to-end computer vision system for automated pavement defect detection and segmentation using YOLOv8/11, with geospatial data pipelines and map integration for road condition analysis.</p>
               <ul>
-                <li>Designed RAG pipeline with semantic search over 50k+ knowledge base articles.</li>
-                <li>Deployed real-time inference service handling 2k+ requests/day with &lt;200ms p95 latency.</li>
-                <li>Implemented feedback loop for continuous model improvement based on agent ratings.</li>
+                <li>Designed detection/segmentation models (YOLO, Faster/Mask R-CNN, DeepLab) optimized for CPU/GPU runtime.</li>
+                <li>Built data pipelines for field video → imagery with class balancing and versioning.</li>
+                <li>Added geospatial components (geotagging, coordinate transforms, camera calibration) for accurate outputs.</li>
               </ul>
-              <p><strong>Stack:</strong> Python, LangChain, OpenAI API, Pinecone, FastAPI, Docker, Kubernetes.</p>
-              <div class="project__links">
-                <a class="btn btn--primary" href="#" target="_blank" rel="noreferrer">Case study</a>
-                <a class="btn btn--ghost" href="#" target="_blank" rel="noreferrer">Source</a>
-              </div>
+              <p><strong>Stack:</strong> Python, PyTorch, YOLO, OpenCV, GCP Vertex AI, Docker, MongoDB, Mapbox.</p>
             </div>
             <div class="project__media" aria-hidden="true">
-              <div class="project__thumb">RAG</div>
+              <div class="project__thumb">CV</div>
             </div>
           </article>
 
@@ -69,72 +81,79 @@
                 <li>Created Slack bot for real-time experiment updates and best model notifications.</li>
               </ul>
               <p><strong>Stack:</strong> Python, MLflow, Kubernetes, Slack API, Prometheus.</p>
-              <div class="project__links">
-                <a class="btn btn--primary" href="#" target="_blank" rel="noreferrer">Overview</a>
-                <a class="btn btn--ghost" href="#" target="_blank" rel="noreferrer">Source</a>
-              </div>
             </div>
             <div class="project__media" aria-hidden="true">
               <div class="project__thumb">Ops</div>
             </div>
           </article>
+
+          <article class="project">
+            <div class="project__text">
+              <h3>Real-time Financial Prediction System</h3>
+              <p>Built and deployed real-time predictive models for financial time series to a live market data feed with ~5s end-to-end latency.</p>
+              <ul>
+                <li>Supported multi-granularity inputs (1-minute → 4-hour candles) with LSTM/RNN architectures.</li>
+                <li>Designed data ingestion & feature pipelines with reproducible training/evaluation harnesses.</li>
+                <li>Explored reinforcement learning for automated trading strategies.</li>
+              </ul>
+              <p><strong>Stack:</strong> Python, TensorFlow, Deep Learning, Reinforcement Learning, Time Series Analysis.</p>
+            </div>
+            <div class="project__media" aria-hidden="true">
+              <div class="project__thumb">ML</div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section id="publications" class="section section--scrollable">
       <div class="container">
         <div class="section__header">
           <p class="eyebrow">Publications</p>
           <h2>Applied research and writing</h2>
         </div>
-        <div class="projects__list">
-          <article class="project">
-            <div class="project__text">
-              <p class="eyebrow">ACL 2024</p>
-              <h3>Efficient Multilingual Retrieval</h3>
-              <p>Introduced a contrastive dual-encoder with adaptive distillation, improving recall@10 by 6% on a 12-language benchmark.</p>
-              <ul>
-                <li>Proposed adaptive knowledge distillation strategy for cross-lingual transfer.</li>
-                <li>Evaluated on 12 languages with consistent improvements across low-resource languages.</li>
-                <li>Open-sourced codebase and model checkpoints for reproducibility.</li>
-              </ul>
-              <div class="project__links">
-                <a class="btn btn--primary" href="#" target="_blank" rel="noreferrer">Read paper</a>
-                <a class="btn btn--ghost" href="#" target="_blank" rel="noreferrer">Code</a>
-              </div>
+        <div class="publications__list">
+          <article class="publication">
+            <p class="eyebrow">Research Publication</p>
+            <h3>Generative Networks for Road Image Data</h3>
+            <p>Developed DCGAN, WGAN, and Conditional GAN models to synthetically generate road image data, enhancing crack classification accuracy by 15%. Two papers written on the subject.</p>
+            <ul>
+              <li>Proposed adaptive data augmentation strategy for imbalanced road defect datasets.</li>
+              <li>Evaluated on multiple road surface types with consistent improvements.</li>
+              <li>Open-sourced codebase for reproducibility.</li>
+            </ul>
+            <div class="publication__links">
+              <a class="btn btn--ghost btn--small" href="#">Read paper →</a>
             </div>
           </article>
 
-          <article class="project">
-            <div class="project__text">
-              <p class="eyebrow">NeurIPS 2023</p>
-              <h3>Monitoring Drift in Graph ML</h3>
-              <p>Proposed a topology-aware drift metric that triggered earlier alerts on dynamic recommendation graphs.</p>
-              <ul>
-                <li>Developed graph structure-aware drift detection using spectral graph theory.</li>
-                <li>Validated on production recommendation systems with 10M+ nodes.</li>
-                <li>Reduced false positive alerts by 35% compared to feature-based drift detection.</li>
-              </ul>
-              <div class="project__links">
-                <a class="btn btn--primary" href="#" target="_blank" rel="noreferrer">Read paper</a>
-                <a class="btn btn--ghost" href="#" target="_blank" rel="noreferrer">Code</a>
-              </div>
+          <article class="publication">
+            <p class="eyebrow">Anomaly Detection Research</p>
+            <h3>AI-Based Fraud Detection in Power Consumption</h3>
+            <p>Two peer-reviewed papers regarding anomaly and fraud detection using AI and deep learning. Models achieved 92% accuracy in trend prediction and 90% accuracy in fraud detection.</p>
+            <ul>
+              <li>Developed deep learning models for power consumption pattern analysis.</li>
+              <li>Validated on real-world utility data with 90%+ detection accuracy.</li>
+              <li>Published findings in peer-reviewed journals.</li>
+            </ul>
+            <div class="publication__links">
+              <a class="btn btn--ghost btn--small" href="#">Read paper →</a>
             </div>
           </article>
-        </div>
-      </div>
-    </section>
 
-    <section class="section section--muted">
-      <div class="container contact">
-        <div class="contact__text">
-          <h2>Interested in collaborating?</h2>
-          <p>Open to discussing projects, research opportunities, or technical consulting.</p>
-        </div>
-        <div class="contact__actions">
-          <a class="btn btn--primary" href="mailto:ash.shahrestani@gmail.com">Email me</a>
-          <a class="btn btn--ghost" href="index.html#hero">Back to portfolio</a>
+          <article class="publication">
+            <p class="eyebrow">3D Point Cloud Research</p>
+            <h3>Attention-Enhanced Point Cloud Segmentation</h3>
+            <p>Worked on enhancement of 3D point cloud segmentation models using attention mechanisms for road infrastructure assessment.</p>
+            <ul>
+              <li>Implemented attention mechanisms for improved feature extraction.</li>
+              <li>Applied to transportation infrastructure analysis.</li>
+              <li>Demonstrated improvements over baseline segmentation models.</li>
+            </ul>
+            <div class="publication__links">
+              <a class="btn btn--ghost btn--small" href="#">Read paper →</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -156,4 +175,3 @@
   <script src="scripts/main.js"></script>
 </body>
 </html>
-
