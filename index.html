@@ -42,14 +42,121 @@
         <div class="hero__content">
           <p class="eyebrow">Machine Learning Engineer</p>
           <h1>Hi, I'm <span class="text-gradient">Afshin Shahrestani</span>.</h1>
-          <p class="lead">Machine Learning Engineer with a track record of taking ideas from research to reliable production systems. I design end-to-end ML pipelines—data capture and curation, model development, and MLOps—to meet real-world runtime, reliability, and maintainability needs.</p>
+          <p class="lead">Machine Learning Engineer specializing in computer vision and large-scale data pipelines. Built zero-to-one CV/ML systems across GCP/AWS, including transformer-based grounding, detection, and segmentation workflows. Strong in Python, PyTorch, OpenCV, and high-throughput video/data pipelines.</p>
           <div class="hero__actions">
             <a class="btn btn--primary" href="#experience">View experience</a>
             <a class="btn btn--ghost" href="#contact">Let's talk</a>
           </div>
         </div>
         <div class="hero__image" aria-hidden="true">
-          <div class="hero__blob"></div>
+          <svg class="neural-network" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                <feMerge>
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+              <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#6366f1;stop-opacity:0.6" />
+                <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:0.6" />
+              </linearGradient>
+              <linearGradient id="nodeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#6366f1" />
+                <stop offset="100%" style="stop-color:#06b6d4" />
+              </linearGradient>
+            </defs>
+            
+            <!-- Connection lines -->
+            <g class="neural-lines">
+              <!-- Layer 1 to Layer 2 -->
+              <line class="neural-line neural-line--1" x1="60" y1="80" x2="160" y2="60"/>
+              <line class="neural-line neural-line--2" x1="60" y1="80" x2="160" y2="140"/>
+              <line class="neural-line neural-line--3" x1="60" y1="80" x2="160" y2="220"/>
+              <line class="neural-line neural-line--4" x1="60" y1="200" x2="160" y2="60"/>
+              <line class="neural-line neural-line--5" x1="60" y1="200" x2="160" y2="140"/>
+              <line class="neural-line neural-line--6" x1="60" y1="200" x2="160" y2="220"/>
+              <line class="neural-line neural-line--7" x1="60" y1="320" x2="160" y2="140"/>
+              <line class="neural-line neural-line--8" x1="60" y1="320" x2="160" y2="220"/>
+              <line class="neural-line neural-line--9" x1="60" y1="320" x2="160" y2="300"/>
+              
+              <!-- Layer 2 to Layer 3 -->
+              <line class="neural-line neural-line--10" x1="160" y1="60" x2="260" y2="100"/>
+              <line class="neural-line neural-line--11" x1="160" y1="60" x2="260" y2="200"/>
+              <line class="neural-line neural-line--12" x1="160" y1="140" x2="260" y2="100"/>
+              <line class="neural-line neural-line--13" x1="160" y1="140" x2="260" y2="200"/>
+              <line class="neural-line neural-line--14" x1="160" y1="140" x2="260" y2="300"/>
+              <line class="neural-line neural-line--15" x1="160" y1="220" x2="260" y2="100"/>
+              <line class="neural-line neural-line--16" x1="160" y1="220" x2="260" y2="200"/>
+              <line class="neural-line neural-line--17" x1="160" y1="220" x2="260" y2="300"/>
+              <line class="neural-line neural-line--18" x1="160" y1="300" x2="260" y2="200"/>
+              <line class="neural-line neural-line--19" x1="160" y1="300" x2="260" y2="300"/>
+              
+              <!-- Layer 3 to Layer 4 -->
+              <line class="neural-line neural-line--20" x1="260" y1="100" x2="340" y2="160"/>
+              <line class="neural-line neural-line--21" x1="260" y1="100" x2="340" y2="240"/>
+              <line class="neural-line neural-line--22" x1="260" y1="200" x2="340" y2="160"/>
+              <line class="neural-line neural-line--23" x1="260" y1="200" x2="340" y2="240"/>
+              <line class="neural-line neural-line--24" x1="260" y1="300" x2="340" y2="160"/>
+              <line class="neural-line neural-line--25" x1="260" y1="300" x2="340" y2="240"/>
+            </g>
+            
+            <!-- Nodes -->
+            <g class="neural-nodes" filter="url(#glow)">
+              <!-- Input layer -->
+              <circle class="neural-node neural-node--1" cx="60" cy="80" r="8"/>
+              <circle class="neural-node neural-node--2" cx="60" cy="200" r="8"/>
+              <circle class="neural-node neural-node--3" cx="60" cy="320" r="8"/>
+              
+              <!-- Hidden layer 1 -->
+              <circle class="neural-node neural-node--4" cx="160" cy="60" r="8"/>
+              <circle class="neural-node neural-node--5" cx="160" cy="140" r="8"/>
+              <circle class="neural-node neural-node--6" cx="160" cy="220" r="8"/>
+              <circle class="neural-node neural-node--7" cx="160" cy="300" r="8"/>
+              
+              <!-- Hidden layer 2 -->
+              <circle class="neural-node neural-node--8" cx="260" cy="100" r="8"/>
+              <circle class="neural-node neural-node--9" cx="260" cy="200" r="8"/>
+              <circle class="neural-node neural-node--10" cx="260" cy="300" r="8"/>
+              
+              <!-- Output layer -->
+              <circle class="neural-node neural-node--11" cx="340" cy="160" r="8"/>
+              <circle class="neural-node neural-node--12" cx="340" cy="240" r="8"/>
+            </g>
+            
+            <!-- Pulse effects traveling along connections -->
+            <g class="neural-pulses">
+              <circle class="neural-pulse neural-pulse--1" r="4">
+                <animateMotion dur="2s" repeatCount="indefinite" begin="0s">
+                  <mpath href="#pulse-path-1"/>
+                </animateMotion>
+              </circle>
+              <circle class="neural-pulse neural-pulse--2" r="4">
+                <animateMotion dur="2.5s" repeatCount="indefinite" begin="0.5s">
+                  <mpath href="#pulse-path-2"/>
+                </animateMotion>
+              </circle>
+              <circle class="neural-pulse neural-pulse--3" r="4">
+                <animateMotion dur="1.8s" repeatCount="indefinite" begin="1s">
+                  <mpath href="#pulse-path-3"/>
+                </animateMotion>
+              </circle>
+              <circle class="neural-pulse neural-pulse--4" r="4">
+                <animateMotion dur="2.2s" repeatCount="indefinite" begin="0.3s">
+                  <mpath href="#pulse-path-4"/>
+                </animateMotion>
+              </circle>
+            </g>
+            
+            <!-- Hidden paths for pulse animations -->
+            <defs>
+              <path id="pulse-path-1" d="M60,80 L160,140 L260,200 L340,160" fill="none"/>
+              <path id="pulse-path-2" d="M60,200 L160,220 L260,300 L340,240" fill="none"/>
+              <path id="pulse-path-3" d="M60,320 L160,300 L260,200 L340,160" fill="none"/>
+              <path id="pulse-path-4" d="M60,80 L160,60 L260,100 L340,240" fill="none"/>
+            </defs>
+          </svg>
         </div>
       </div>
     </section>
@@ -61,8 +168,8 @@
           <h2>From research to production systems.</h2>
         </div>
         <div class="section__body">
-          <p>I design end-to-end ML pipelines—data capture and curation, model development, and MLOps—to meet real-world runtime, reliability, and maintainability needs. Recent work centers on computer vision and geospatial/camera-calibrated outputs, turning field data into decision-ready insights for customers.</p>
-          <p>I'm at my best owning the lifecycle, shaping metrics and review cadences, and collaborating closely with product and platform teams to ship dependable ML services. As the first ML hire at PavePal, I built the CV/ML function from scratch and continue to partner with leadership, backend, and product teams to ship production code.</p>
+          <p>I own the full ML lifecycle—from data ingestion to models to deployed services—implementing monitoring and reliability practices while collaborating tightly with backend/cloud teams through CI/CD, code reviews, and containerized deployments.</p>
+          <p>Recent work includes transformer-based grounding, detection, and segmentation workflows using HuggingFace, SAM-style models, and custom pre/post-processing. Strong in Python, PyTorch, OpenCV, Hydra config management, and high-throughput video/data pipelines.</p>
         </div>
       </div>
     </section>
@@ -86,66 +193,62 @@
           <article class="timeline__item" aria-expanded="false">
             <button class="timeline__header" aria-expanded="false">
               <div class="timeline__header-content">
-                <p class="eyebrow">Oct 2022 - Present - Lead Machine Learning Engineer & Data Scientist</p>
+                <p class="eyebrow">Oct 2024 - Present - Lead Machine Learning Engineer & Data Scientist</p>
                 <h3>PavePal Technologies Inc</h3>
-                <p class="timeline__summary">First ML hire; built the CV/ML function from scratch. Design and implement computer vision models for pavement defect detection and geospatial data pipelines.</p>
+                <p class="timeline__summary">Led the zero-to-one build of the CV/ML pipelines; managed two ML engineers and partnered with leadership, backend, and product to ship production code.</p>
               </div>
               <span class="timeline__icon">▼</span>
             </button>
             <div class="timeline__content">
               <ul>
-                <li>Designed, implemented, and optimized detection/segmentation models (YOLO, Faster/Mask R-CNN, DeepLab, DETR-style) in PyTorch/OpenCV to meet runtime/latency/memory targets on CPU/GPU.</li>
-                <li>Built data pipelines for large, real-world field video → imagery (extraction, sanity checks, class balancing, filtering, versioning) tailored to semi-low-resource, highly imbalanced domains.</li>
-                <li>Added geospatial & calibration components (geotagging, coordinate transforms, map alignment; intrinsics/extrinsics, distortion, image-to-world sizing) to produce accurate, report-ready outputs.</li>
-                <li>Stood up CI/CD and Dockerized services on Vertex AI / Cloud Run and SageMaker / ECS/EC2; introduced code reviews and outlined monitoring approach (error buckets, drift checks, retraining triggers).</li>
-                <li>Designed interactive Dash + Flask demo applications to showcase real-time inference and map integration.</li>
-                <li>Collaborate with executives on product features, roadmap, and AI-driven maintenance planning and defect sizing.</li>
-                <li>Researched automated AI-based pavement scoring and treatment planning using computer vision and vision-language models (VLMs).</li>
+                <li>Led the zero-to-one build of the CV/ML function; managed two ML engineers and partnered with CTO/CEO, backend, and product to define requirements and ship production code.</li>
+                <li>Designed, implemented, and optimized transformer-based detection/segmentation and grounding pipelines for large-scale object processing, meeting strict runtime/latency constraints on CPU/GPU targets.</li>
+                <li>Owned the ML lifecycle end-to-end—data ingestion, preprocessing, training/evaluation, packaging, CI/CD, and deployment—on GCP (Vertex/Cloud Run) and AWS (SageMaker/ECS); migrated the codebase to Hydra configs and Makefile-driven automation.</li>
+                <li>Built high-throughput video and dataset pipelines (extraction, balancing, filtering, versioning) with major runtime improvements for multi-hour workloads; created scalable pre/post-processing flows tailored to field data.</li>
+                <li>Implemented geospatial components and SfM/triangulation workflows to convert detections into accurate, map-aligned outputs for customer reporting.</li>
+                <li>Developed and maintained internal Python packages used across repos—versioned, documented, installable—and introduced shared utilities for data, models, and evaluation.</li>
+                <li>Established engineering standards, code reviews, and a monitoring approach (error buckets, drift checks, metrics) to support ongoing model reliability.</li>
               </ul>
-              <p><strong>Stack:</strong> Python, PyTorch, YOLO (v5-v11), Detectron2, Roboflow, OpenCV, AWS SageMaker, EC2, ECS, Fargate, SQS, GCP Vertex AI, GCP Compute Engine, Docker, MongoDB, Mapbox, Folium, Flask, Dash, GitHub Actions, MLFlow.</p>
+              <p><strong>Stack:</strong> Python, PyTorch, HuggingFace, OpenCV, Hydra, Docker, GCP (Vertex AI, Cloud Run, GCS), AWS (SageMaker, ECS, EC2, S3), MongoDB, GitHub CI/CD.</p>
             </div>
           </article>
 
           <article class="timeline__item" aria-expanded="false">
             <button class="timeline__header" aria-expanded="false">
               <div class="timeline__header-content">
-                <p class="eyebrow">Sep 2022 - Dec 2024 - Graduate Research Assistant</p>
+                <p class="eyebrow">Sep 2022 - Oct 2024 - Graduate Researcher</p>
                 <h3>University of British Columbia, SALMALIS Lab</h3>
-                <p class="timeline__summary">Conducted advanced research on Generative Networks and computer vision for transportation engineering applications.</p>
+                <p class="timeline__summary">Built computer-vision models for 2D & 3D object detection/segmentation. Thesis focused on data generation for detection to balance low-resource, imbalanced datasets.</p>
               </div>
               <span class="timeline__icon">▼</span>
             </button>
             <div class="timeline__content">
               <ul>
-                <li>Led Generative Networks projects (DCGAN, WGAN, Conditional GAN) to synthetically generate road image data, enhancing crack classification accuracy by 15%. Two papers written on the subject.</li>
-                <li>Developed and implemented road infrastructure object detection, segmentation, and classification with models such as YOLOv5 and Faster R-CNN, pipelines using image and 3D point clouds.</li>
-                <li>Worked on enhancement of 3D point cloud segmentation models using attention mechanisms.</li>
-                <li>Undertook role of Lab Manager, responsible for lab operations including system maintenance, hardware setups, and software installations.</li>
-                <li>Mentored 3 summer interns, giving them projects, tasks, and research material, while teaching them about different aspects of deep learning in transportation.</li>
+                <li>Built computer-vision models for 2D & 3D object detection/segmentation using PyTorch with YOLO, Detectron2, and MMDetection.</li>
+                <li>Thesis focused on data generation for 2D detection to balance low-resource, imbalanced datasets; designed pipelines for augmentation/synthesis and class-balance curation.</li>
+                <li>Developed reproducible training/evaluation workflows (experiments, ablations, visualizations) and documented results for downstream reuse.</li>
+                <li>Published two papers (TAC 2024, IEEE 2025).</li>
               </ul>
-              <p><strong>Stack:</strong> Python, PyTorch, TensorFlow, Keras, YOLOv5, Faster R-CNN, 3D Point Cloud Processing, Computer Vision.</p>
+              <p><strong>Stack:</strong> Python, PyTorch, YOLO, Detectron2, MMDetection, Computer Vision, GANs.</p>
             </div>
           </article>
 
           <article class="timeline__item" aria-expanded="false">
             <button class="timeline__header" aria-expanded="false">
               <div class="timeline__header-content">
-                <p class="eyebrow">Dec 2021 - May 2022 - Machine Learning Engineer, Data Analyst</p>
+                <p class="eyebrow">Dec 2021 - May 2022 - Machine Learning Engineer, Data Scientist</p>
                 <h3>Aran Accelerator</h3>
-                <p class="timeline__summary">Built and deployed real-time predictive models for financial time series with reinforcement learning research track.</p>
+                <p class="timeline__summary">Built and deployed real-time predictive models for financial time series to a live data feed with 5-second end-to-end latency.</p>
               </div>
               <span class="timeline__icon">▼</span>
             </button>
             <div class="timeline__content">
               <ul>
-                <li>Built and deployed real-time predictive models for financial time series (LSTM/RNN) to a live market data feed with ~5s end-to-end latency; supported multi-granularity inputs (1-minute → 4-hour candles).</li>
-                <li>Designed data ingestion & feature pipelines, reproducible training/evaluation harnesses, and experiment tracking.</li>
-                <li>Explored reinforcement learning as an R&D track (policy variants, reward shaping); evaluated via backtests, documented assumptions/limitations.</li>
-                <li>Conducted comprehensive research and developed predictive models for asset price trends and decision-making algorithms, leveraging deep reinforcement learning techniques to automate trading, yielding profits up to 2000% in 2021-2022.</li>
-                <li>Led the machine learning team of a startup, trained 5 interns, and collaborated with other teams for model integration into systems.</li>
-                <li>Presented findings, progress reports, and future plans to investors and managers at the company.</li>
+                <li>Built and deployed real-time predictive models for financial time series (LSTM/RNN) to a live data feed with 5-second end-to-end latency; supported multi-granularity inputs (1-minute to 4-hour).</li>
+                <li>Implemented data ingestion/feature pipelines, experiment tracking, reproducible evaluation harnesses; collaborated with engineering/product and conducted code reviews to ship production services.</li>
+                <li>Explored reinforcement learning as an R&D track and reported findings/limitations; insights fed the model improvement roadmap and monitoring criteria.</li>
               </ul>
-              <p><strong>Stack:</strong> Python, TensorFlow, Deep Learning, Reinforcement Learning, LSTM, RNN, Time Series Analysis, Data Mining.</p>
+              <p><strong>Stack:</strong> Python, TensorFlow, LSTM, RNN, Reinforcement Learning, Time Series Analysis.</p>
             </div>
           </article>
 
@@ -226,76 +329,50 @@
         </div>
         <div class="skills__summary">
           <div class="skills__summary-list">
-            <h4>Programming Languages</h4>
+            <h4>Computer Vision & ML</h4>
             <ul>
-              <li>Python (advanced)</li>
-              <li>Java (intermediate)</li>
-              <li>C (intermediate)</li>
-              <li>Bash (beginner)</li>
+              <li>PyTorch, OpenCV, scikit-learn</li>
+              <li>HuggingFace Transformers</li>
+              <li>Grounding, Detection, Segmentation</li>
+              <li>Large-scale video/image pipelines</li>
+              <li>Vision-language workflows</li>
             </ul>
           </div>
           <div class="skills__summary-list">
-            <h4>ML/DL Frameworks</h4>
+            <h4>Tooling</h4>
             <ul>
-              <li>PyTorch</li>
-              <li>TensorFlow</li>
-              <li>Keras</li>
-              <li>Scikit-Learn</li>
-              <li>YOLO (v5-v11)</li>
-              <li>Detectron2</li>
-              <li>Roboflow</li>
-              <li>Inference</li>
-              <li>Supervision</li>
-              <li>SAM2</li>
+              <li>CVAT, Roboflow, FiftyOne</li>
+              <li>TensorBoard, Weights & Biases</li>
+              <li>Hydra config management</li>
+              <li>OpenSfM</li>
             </ul>
           </div>
           <div class="skills__summary-list">
-            <h4>Data Processing</h4>
+            <h4>MLOps & Data</h4>
             <ul>
-              <li>Pandas</li>
-              <li>NumPy</li>
-              <li>Matplotlib</li>
-              <li>Seaborn</li>
-              <li>OpenCV</li>
-              <li>PIL</li>
-              <li>CVAT</li>
-              <li>MongoDB</li>
-              <li>MySQL</li>
-              <li>SQL Server</li>
+              <li>Docker, Git/GitHub CI/CD</li>
+              <li>Makefile automation</li>
+              <li>Reproducible pipelines</li>
+              <li>Data versioning, experiment tracking</li>
+              <li>MongoDB, MySQL, SQL Server</li>
             </ul>
           </div>
           <div class="skills__summary-list">
             <h4>Cloud & Deployment</h4>
             <ul>
-              <li>AWS SageMaker</li>
-              <li>EC2, ECS, Fargate</li>
-              <li>SQS</li>
-              <li>GCP Vertex AI</li>
-              <li>GCP Compute Engine</li>
-              <li>Docker</li>
-              <li>Git, GitHub</li>
-            </ul>
-          </div>
-          <div class="skills__summary-list">
-            <h4>MLOps & Tools</h4>
-            <ul>
-              <li>MLFlow</li>
-              <li>GitHub Actions</li>
-              <li>CI/CD Pipelines</li>
-              <li>Git-based Workflow</li>
-              <li>API Design</li>
-              <li>System Architecture</li>
+              <li>GCP (Vertex AI, Cloud Run, GCS)</li>
+              <li>AWS (SageMaker, ECS, EC2, S3, Lambda)</li>
+              <li>Containerized batch/online inference</li>
+              <li>Service-oriented deployments</li>
             </ul>
           </div>
         </div>
         <div class="skills__detailed" style="display:none;">
           <div class="skills__grid">
-            <article class="card"><h3>Programming Languages</h3><p>Python (advanced), Java (intermediate), C (intermediate), Bash (beginner).</p></article>
-            <article class="card"><h3>ML/DL Frameworks</h3><p>PyTorch, TensorFlow, Keras, Scikit-Learn, YOLO (v5-v11), Detectron2, Roboflow, Inference, Supervision, SAM2.</p></article>
-            <article class="card"><h3>Data Processing</h3><p>Pandas, NumPy, Matplotlib, Seaborn, OpenCV, PIL, CVAT, MongoDB, MySQL, SQL Server.</p></article>
-            <article class="card"><h3>Cloud & Deployment</h3><p>AWS SageMaker, EC2, ECS, Fargate, SQS, GCP Vertex AI, GCP Compute Engine, Docker, Git, GitHub.</p></article>
-            <article class="card"><h3>MLOps & Tools</h3><p>MLFlow, GitHub Actions, CI/CD Pipelines, Git-based Workflow, API Design, System Architecture.</p></article>
-            <article class="card"><h3>Geospatial & Visualization</h3><p>Mapbox, Folium, Geotagging, Coordinate Transforms, Camera Calibration, Image-to-World Sizing.</p></article>
+            <article class="card"><h3>Computer Vision & ML</h3><p>PyTorch, OpenCV, scikit-learn; HuggingFace; Transformer-based grounding, detection, segmentation; large-scale video/image pipelines; vision-language workflows.</p></article>
+            <article class="card"><h3>Tooling</h3><p>CVAT, Roboflow, FiftyOne, TensorBoard, Weights & Biases, Hydra, OpenSfM.</p></article>
+            <article class="card"><h3>MLOps & Data</h3><p>Docker, Git/GitHub CI/CD, Makefile automation, reproducible pipelines, data versioning, experiment tracking, scalable pre/post-processing, performance optimization; MongoDB, MySQL, SQL Server.</p></article>
+            <article class="card"><h3>Cloud & Deployment</h3><p>GCP (Vertex AI, Cloud Run, GCS, Compute Engine); AWS (SageMaker, ECS, EC2, S3, ECR, Lambda); containerized batch/online inference services; service-oriented deployments; runtime/latency constraints.</p></article>
           </div>
         </div>
       </div>
@@ -311,19 +388,21 @@
         <div class="projects__list projects__list--no-image">
           <article class="project project--no-image">
             <div class="project__text">
-              <h3>Pavement Defect Detection & Geospatial Analysis</h3>
-              <p>Built end-to-end computer vision system for automated pavement defect detection and segmentation using YOLOv8/11, with geospatial data pipelines and map integration for road condition analysis.</p>
+              <h3>Better Exam - Accessible Exam Platform</h3>
+              <p>An exam hosting service for the visually impaired using Azure Cognitive Speech Services. Text-to-Speech reads questions; Speech-to-Text captures answers. Ranked top 50 in Azure AI Hackathon 2021.</p>
               <div class="project__links">
-                <a class="btn btn--primary" href="projects.html">View details →</a>
+                <a class="btn btn--primary" href="projects.html#projects">View details →</a>
+                <a class="btn btn--ghost" href="https://github.com/Azure-AI/Better-Exam" target="_blank">Source Code →</a>
               </div>
             </div>
           </article>
           <article class="project project--no-image">
             <div class="project__text">
-              <h3>AutoML Experiment Runner</h3>
-              <p>Designed a lightweight experiment harness that provisions GPU workloads, tracks metrics, and reports best candidates to Slack, cutting prototyping time by 40%.</p>
+              <h3>Road Image Object Detection</h3>
+              <p>Deep Learning object detection using YOLOv5 and Faster R-CNN to detect traffic signs, roads, lane markings, and pavement cracks. Images gathered from Canadian roads and annotated using CVAT.</p>
               <div class="project__links">
-                <a class="btn btn--primary" href="projects.html">View details →</a>
+                <a class="btn btn--primary" href="projects.html#projects">View details →</a>
+                <a class="btn btn--ghost" href="https://github.com/a-shahrestani/Road-Image-Object-Detection" target="_blank">Source Code →</a>
               </div>
             </div>
           </article>
@@ -336,25 +415,19 @@
         <div class="section__header">
           <p class="eyebrow">Publications</p>
           <h2>Research contributions</h2>
-          <p class="section__lede">Peer-reviewed papers and research publications. <a href="projects.html">View all publications →</a></p>
+          <p class="section__lede">45 citations · h-index: 2 · <a href="https://scholar.google.com/citations?user=cDgIzQMAAAAJ&hl=en" target="_blank">Google Scholar →</a></p>
         </div>
         <div class="publications__list">
-          <article class="publication">
-            <p class="eyebrow">Research Publication</p>
-            <h3>Generative Networks for Road Image Data</h3>
-            <p>Developed DCGAN, WGAN, and Conditional GAN models to synthetically generate road image data, enhancing crack classification accuracy by 15%. Two papers written on the subject.</p>
-            <div class="publication__links">
-              <a class="btn btn--ghost btn--small" href="projects.html">View details →</a>
-            </div>
-          </article>
-          <article class="publication">
-            <p class="eyebrow">Anomaly Detection Research</p>
-            <h3>AI-Based Fraud Detection in Power Consumption</h3>
-            <p>Two peer-reviewed papers regarding anomaly and fraud detection using AI and deep learning. Models achieved 92% accuracy in trend prediction and 90% accuracy in fraud detection.</p>
-            <div class="publication__links">
-              <a class="btn btn--ghost btn--small" href="projects.html">View details →</a>
-            </div>
-          </article>
+          <a href="projects.html#publications" class="publication publication--link">
+            <p class="eyebrow">IEEE Transactions on ITS · 2025</p>
+            <h3>Conditional Pavement Crack Data Generation for Selective Data Augmentation Using GAN</h3>
+            <p>Developed a Conditional GAN enabling selective data augmentation for pavement crack classification, addressing class imbalance in road surface datasets.</p>
+          </a>
+          <a href="projects.html#publications" class="publication publication--link">
+            <p class="eyebrow">Electric Power Systems Research · 2022 · 36 citations</p>
+            <h3>Online Electricity Theft Detection Framework for Large-Scale Smart Grid Data</h3>
+            <p>AI-based framework for real-time fraud detection in smart grid power consumption data, achieving 90% accuracy in detecting electricity theft patterns.</p>
+          </a>
         </div>
       </div>
     </section>
@@ -363,10 +436,10 @@
       <div class="container two-col">
         <div class="section__header">
           <p class="eyebrow">Beyond work</p>
-          <h2>Photo essays, synth jams, trails.</h2>
+          <h2>Gaming, miniatures, and trails.</h2>
         </div>
         <div class="section__body">
-          <p>I document backcountry trips, analog photography experiments, and modular synth sketches. The hobbies page has albums, gear notes, and personal write-ups.</p>
+          <p>When I'm not coding, you'll find me gaming, building Warhammer and Gunpla miniatures, or hiking trails. The hobbies page has more details on what keeps me creative and balanced.</p>
           <a class="btn btn--primary" href="hobbies.html">Explore hobbies</a>
         </div>
       </div>

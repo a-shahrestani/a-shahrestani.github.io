@@ -27,7 +27,17 @@
 
 .hero__actions { display: flex; gap: $space-3; margin-top: $space-5; flex-wrap: wrap; }
 
-.hero__image { position: relative; min-height: 260px; }
+.hero__image { 
+  position: relative; 
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  @media (max-width: 900px) {
+    display: none;
+  }
+}
 
 .hero__blob {
   width: 100%; height: 100%;
@@ -42,8 +52,84 @@
   50% { border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%; }
 }
 
+// Neural Network Animation
+.neural-network {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  opacity: 0.9;
+  
+  @media (max-width: 900px) {
+    display: none;
+  }
+}
+
+.neural-line {
+  stroke: url(#lineGradient);
+  stroke-width: 1.5;
+  opacity: 0.4;
+  animation: line-pulse 3s ease-in-out infinite;
+  
+  @for $i from 1 through 25 {
+    &--#{$i} {
+      animation-delay: #{$i * 0.12}s;
+    }
+  }
+}
+
+@keyframes line-pulse {
+  0%, 100% { 
+    opacity: 0.2;
+    stroke-width: 1;
+  }
+  50% { 
+    opacity: 0.6;
+    stroke-width: 2;
+  }
+}
+
+.neural-node {
+  fill: url(#nodeGradient);
+  opacity: 0.9;
+  animation: node-glow 2s ease-in-out infinite;
+  
+  @for $i from 1 through 12 {
+    &--#{$i} {
+      animation-delay: #{$i * 0.15}s;
+    }
+  }
+}
+
+@keyframes node-glow {
+  0%, 100% { 
+    opacity: 0.6;
+    r: 6;
+  }
+  50% { 
+    opacity: 1;
+    r: 10;
+  }
+}
+
+.neural-pulse {
+  fill: $secondary;
+  opacity: 0.9;
+  filter: url(#glow);
+  
+  &--1 { fill: $primary; }
+  &--2 { fill: $secondary; }
+  &--3 { fill: #10b981; }
+  &--4 { fill: #8b5cf6; }
+}
+
 // Hero section styling - consistent across all pages
 .section.hero {
+  // On mobile, align to top and allow scrolling
+  @media (max-width: 900px) {
+    align-items: flex-start;
+    overflow-y: auto;
+  }
+  
   // Use same grid layout as home page
   .hero__content {
     h1 {

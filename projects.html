@@ -36,7 +36,7 @@
         <div class="hero__content">
           <p class="eyebrow">Projects & Publications</p>
           <h1>Technical projects and <span class="text-gradient">research contributions</span>.</h1>
-          <p class="lead">Case studies from production ML systems and applied research publications.</p>
+          <p class="lead">Personal projects, professional work, and research from over the years.</p>
           <div class="hero__actions">
             <a class="btn btn--primary" href="#projects">View projects</a>
             <a class="btn btn--ghost" href="#publications">Publications</a>
@@ -57,49 +57,78 @@
         <div class="projects__list">
           <article class="project">
             <div class="project__text">
-              <h3>Pavement Defect Detection & Geospatial Analysis</h3>
-              <p>Built end-to-end computer vision system for automated pavement defect detection and segmentation using YOLOv8/11, with geospatial data pipelines and map integration for road condition analysis.</p>
+              <h3>Pavement Crack Image Generator</h3>
+              <p>Developed Deep Convolutional Generative Adversarial Networks (DCGAN), Wasserstein GAN (WGAN), WGAN with Gradient Penalty (WGAN_GP), and Wasserstein Conditional GAN (cGAN) with Gradient Penalty (C_WGAN_GP) to generate synthetic images of pavement cracks.</p>
               <ul>
-                <li>Designed detection/segmentation models (YOLO, Faster/Mask R-CNN, DeepLab) optimized for CPU/GPU runtime.</li>
-                <li>Built data pipelines for field video → imagery with class balancing and versioning.</li>
-                <li>Added geospatial components (geotagging, coordinate transforms, camera calibration) for accurate outputs.</li>
+                <li>Built GAN architectures from scratch for synthetic crack image generation.</li>
+                <li>Used to augment existing datasets and improve ML model robustness.</li>
+                <li>Facilitates research in pavement maintenance and repair.</li>
               </ul>
-              <p><strong>Stack:</strong> Python, PyTorch, YOLO, OpenCV, GCP Vertex AI, Docker, MongoDB, Mapbox.</p>
+              <p><strong>Stack:</strong> Python, PyTorch, DCGAN, WGAN, Conditional GAN.</p>
+              <div class="project__links">
+                <a class="btn btn--ghost btn--small" href="https://github.com/a-shahrestani/Pavement-Crack-Data-Generator" target="_blank">Source Code →</a>
+              </div>
             </div>
             <div class="project__media" aria-hidden="true">
-              <div class="project__thumb">CV</div>
+              <img class="project__img" src="assets/gan.png" alt="GAN generated pavement crack images">
             </div>
           </article>
 
           <article class="project">
             <div class="project__text">
-              <h3>AutoML Experiment Runner</h3>
-              <p>Designed a lightweight experiment harness that provisions GPU workloads, tracks metrics, and reports best candidates to Slack, cutting prototyping time by 40%.</p>
+              <h3>Road Image Object Annotation and Detection</h3>
+              <p>Deep Learning object detection models, including YOLOv5 and Faster R-CNN, were used to detect different objects such as traffic signs, traffic roads, pavement lane marking, and pavement cracks in road images.</p>
               <ul>
-                <li>Built automated hyperparameter search with early stopping and resource allocation.</li>
-                <li>Integrated with MLflow for experiment tracking and model versioning.</li>
-                <li>Created Slack bot for real-time experiment updates and best model notifications.</li>
+                <li>Gathered images from Canadian roads and public datasets.</li>
+                <li>Annotated using CVAT to be compatible with YOLO and COCO formats.</li>
+                <li>Trained and evaluated multiple detection architectures.</li>
               </ul>
-              <p><strong>Stack:</strong> Python, MLflow, Kubernetes, Slack API, Prometheus.</p>
+              <p><strong>Stack:</strong> Python, YOLOv5, Faster R-CNN, CVAT, OpenCV.</p>
+              <div class="project__links">
+                <a class="btn btn--ghost btn--small" href="https://github.com/a-shahrestani/Road-Image-Object-Detection" target="_blank">Source Code →</a>
+              </div>
             </div>
             <div class="project__media" aria-hidden="true">
-              <div class="project__thumb">Ops</div>
+              <img class="project__img" src="assets/detection.png" alt="Road object detection results">
             </div>
           </article>
 
           <article class="project">
             <div class="project__text">
-              <h3>Real-time Financial Prediction System</h3>
-              <p>Built and deployed real-time predictive models for financial time series to a live market data feed with ~5s end-to-end latency.</p>
+              <h3>Better Exam - Accessible Exam Platform</h3>
+              <p>An exam hosting service for the visually impaired, built using Azure Cognitive Speech Services. Ranked top 50 in Azure AI Hackathon 2021.</p>
               <ul>
-                <li>Supported multi-granularity inputs (1-minute → 4-hour candles) with LSTM/RNN architectures.</li>
-                <li>Designed data ingestion & feature pipelines with reproducible training/evaluation harnesses.</li>
-                <li>Explored reinforcement learning for automated trading strategies.</li>
+                <li>Text-to-Speech reads questions aloud; Speech-to-Text captures student answers.</li>
+                <li>Intuitive touch gestures and voice navigation for accessibility.</li>
+                <li>Teachers create exams via web tool; students access via QR codes or links.</li>
+                <li>Answers compiled into PDF and emailed to teachers automatically.</li>
               </ul>
-              <p><strong>Stack:</strong> Python, TensorFlow, Deep Learning, Reinforcement Learning, Time Series Analysis.</p>
+              <p><strong>Stack:</strong> Python, Flask, Azure Cognitive Services, JavaScript, HTML/CSS.</p>
+              <div class="project__links">
+                <a class="btn btn--ghost btn--small" href="https://github.com/Azure-AI/Better-Exam" target="_blank">Source Code →</a>
+              </div>
             </div>
             <div class="project__media" aria-hidden="true">
-              <div class="project__thumb">ML</div>
+              <img class="project__img" src="assets/be.png" alt="Better Exam platform interface">
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project__text">
+              <h3>Power Consumption Trend Prediction & Fraud Detection</h3>
+              <p>Used deep learning models such as Autoencoders, RNNs, MLPs, and data analysis techniques like missing value interpolation, clustering, and decision trees to develop Trend Prediction and Fraud Detection software.</p>
+              <ul>
+                <li>Preprocessing including data normalization, standard scaling, and outlier removal.</li>
+                <li>Achieved 92%+ accuracy in both trend prediction and fraud detection.</li>
+                <li>Incorporated into 2 software products sold to Mashhad Electrical Utility Company.</li>
+              </ul>
+              <p><strong>Stack:</strong> Python, TensorFlow, Autoencoders, RNN, Scikit-learn.</p>
+              <div class="project__links">
+                <a class="btn btn--ghost btn--small" href="https://github.com/a-shahrestani/Irish-energy" target="_blank">Source Code →</a>
+              </div>
+            </div>
+            <div class="project__media" aria-hidden="true">
+              <div class="project__thumb">DL</div>
             </div>
           </article>
         </div>
@@ -110,48 +139,77 @@
       <div class="container">
         <div class="section__header">
           <p class="eyebrow">Publications</p>
-          <h2>Applied research and writing</h2>
+          <h2>Peer-reviewed research</h2>
+          <p class="section__lede">45 citations · h-index: 2 · <a href="https://scholar.google.com/citations?user=cDgIzQMAAAAJ&hl=en" target="_blank">Google Scholar →</a></p>
         </div>
         <div class="publications__list">
           <article class="publication">
-            <p class="eyebrow">Research Publication</p>
-            <h3>Generative Networks for Road Image Data</h3>
-            <p>Developed DCGAN, WGAN, and Conditional GAN models to synthetically generate road image data, enhancing crack classification accuracy by 15%. Two papers written on the subject.</p>
+            <p class="eyebrow">IEEE Transactions on Intelligent Transportation Systems · 2025</p>
+            <h3>Conditional Pavement Crack Data Generation for Selective Data Augmentation Using GAN</h3>
+            <p>Developed a Conditional GAN (cGAN) model enabling selective data augmentation for pavement crack classification. The approach allows targeted generation of specific crack types to address class imbalance issues in road surface datasets.</p>
             <ul>
-              <li>Proposed adaptive data augmentation strategy for imbalanced road defect datasets.</li>
-              <li>Evaluated on multiple road surface types with consistent improvements.</li>
-              <li>Open-sourced codebase for reproducibility.</li>
+              <li>Implemented conditional generation for targeted crack type synthesis.</li>
+              <li>Addressed class imbalance in road defect datasets.</li>
+              <li>Improved classification accuracy through selective augmentation.</li>
             </ul>
             <div class="publication__links">
-              <a class="btn btn--ghost btn--small" href="#">Read paper →</a>
+              <a class="btn btn--ghost btn--small" href="https://ieeexplore.ieee.org/abstract/document/11144507/" target="_blank">IEEE T-ITS →</a>
             </div>
           </article>
 
           <article class="publication">
-            <p class="eyebrow">Anomaly Detection Research</p>
-            <h3>AI-Based Fraud Detection in Power Consumption</h3>
-            <p>Two peer-reviewed papers regarding anomaly and fraud detection using AI and deep learning. Models achieved 92% accuracy in trend prediction and 90% accuracy in fraud detection.</p>
+            <p class="eyebrow">TAC Conference · 2024 · 2 citations</p>
+            <h3>Pavement Crack Image Generation and Data Balancing Using Deep Adversarial Generative Networks</h3>
+            <p>Presented DCGAN and WGAN models for synthetic road image generation, demonstrating how deep adversarial networks can effectively balance imbalanced pavement crack datasets and enhance classification model performance.</p>
             <ul>
-              <li>Developed deep learning models for power consumption pattern analysis.</li>
-              <li>Validated on real-world utility data with 90%+ detection accuracy.</li>
-              <li>Published findings in peer-reviewed journals.</li>
+              <li>Developed DCGAN and WGAN architectures for road imagery.</li>
+              <li>Demonstrated effective data balancing strategies.</li>
+              <li>Enhanced downstream classification performance.</li>
             </ul>
             <div class="publication__links">
-              <a class="btn btn--ghost btn--small" href="#">Read paper →</a>
+              <a class="btn btn--ghost btn--small" href="https://www.tac-atc.ca/wp-content/uploads/ShahrestaniA_PavementCrackImageGenerationandDataBalancingUsingDeepAdversarialGenerativeNetworks.pdf" target="_blank">TAC Conference →</a>
             </div>
           </article>
 
           <article class="publication">
-            <p class="eyebrow">3D Point Cloud Research</p>
-            <h3>Attention-Enhanced Point Cloud Segmentation</h3>
-            <p>Worked on enhancement of 3D point cloud segmentation models using attention mechanisms for road infrastructure assessment.</p>
+            <p class="eyebrow">University of British Columbia · 2024 · 1 citation</p>
+            <h3>Using Wasserstein Distance and Conditionality for Stable and Selective Data Augmentation in Pavement Crack Analysis</h3>
+            <p>Master's thesis exploring the use of Wasserstein distance (WGAN) and conditional generation techniques for stable training and targeted data augmentation in pavement crack analysis, achieving 15% improvement in crack classification accuracy.</p>
             <ul>
-              <li>Implemented attention mechanisms for improved feature extraction.</li>
-              <li>Applied to transportation infrastructure analysis.</li>
-              <li>Demonstrated improvements over baseline segmentation models.</li>
+              <li>Explored Wasserstein distance for stable GAN training.</li>
+              <li>Implemented conditional generation for selective augmentation.</li>
+              <li>Achieved 15% improvement in crack classification accuracy.</li>
             </ul>
             <div class="publication__links">
-              <a class="btn btn--ghost btn--small" href="#">Read paper →</a>
+              <a class="btn btn--ghost btn--small" href="https://open.library.ubc.ca/soa/cIRcle/collections/ubctheses/24/items/1.0445467" target="_blank">UBC Library →</a>
+            </div>
+          </article>
+
+          <article class="publication">
+            <p class="eyebrow">Electric Power Systems Research · 2022 · 36 citations</p>
+            <h3>Online Electricity Theft Detection Framework for Large-Scale Smart Grid Data</h3>
+            <p>Developed an AI-based framework for real-time fraud detection in smart grid power consumption data. The model achieved 90% accuracy in detecting electricity theft patterns across large-scale datasets.</p>
+            <ul>
+              <li>Built real-time fraud detection for smart grid systems.</li>
+              <li>Achieved 90% accuracy on large-scale datasets.</li>
+              <li>Most cited publication with 36 citations.</li>
+            </ul>
+            <div class="publication__links">
+              <a class="btn btn--ghost btn--small" href="https://www.sciencedirect.com/science/article/abs/pii/S0378779622001250" target="_blank">EPSR Journal →</a>
+            </div>
+          </article>
+
+          <article class="publication">
+            <p class="eyebrow">IEEE IoT Conference · 2021 · 6 citations</p>
+            <h3>Filter-Based Time-Series Anomaly Detection in AMI Using AI Approaches</h3>
+            <p>Proposed AI-based anomaly detection methods for Advanced Metering Infrastructure (AMI) using time-series filtering techniques. The approach achieved 92% accuracy in trend prediction for smart meter data.</p>
+            <ul>
+              <li>Developed filter-based anomaly detection for AMI systems.</li>
+              <li>Achieved 92% accuracy in trend prediction.</li>
+              <li>Applied to real-world smart meter datasets.</li>
+            </ul>
+            <div class="publication__links">
+              <a class="btn btn--ghost btn--small" href="https://ieeexplore.ieee.org/abstract/document/9469717/" target="_blank">IEEE Xplore →</a>
             </div>
           </article>
         </div>

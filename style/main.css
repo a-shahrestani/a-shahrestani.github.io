@@ -57,7 +57,6 @@ body {
 *::-webkit-scrollbar-thumb {
   background: rgba(16, 185, 129, 0.25);
   border-radius: 2px;
-  -webkit-transition: background 0.3s ease;
   transition: background 0.3s ease;
 }
 *::-webkit-scrollbar-thumb:hover {
@@ -308,8 +307,7 @@ main {
   top: 0;
   left: 0;
   right: 0;
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   background: rgba(10, 10, 10, 0.9);
   z-index: 100;
   border-bottom: 1px solid #2a2a2a;
@@ -409,6 +407,14 @@ main {
 .hero__image {
   position: relative;
   min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 900px) {
+  .hero__image {
+    display: none;
+  }
 }
 
 .hero__blob {
@@ -426,6 +432,186 @@ main {
   }
   50% {
     border-radius: 60% 40% 30% 70%/50% 60% 40% 50%;
+  }
+}
+.neural-network {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  opacity: 0.9;
+}
+@media (max-width: 900px) {
+  .neural-network {
+    display: none;
+  }
+}
+
+.neural-line {
+  stroke: url(#lineGradient);
+  stroke-width: 1.5;
+  opacity: 0.4;
+  animation: line-pulse 3s ease-in-out infinite;
+}
+.neural-line--1 {
+  animation-delay: 0.12s;
+}
+.neural-line--2 {
+  animation-delay: 0.24s;
+}
+.neural-line--3 {
+  animation-delay: 0.36s;
+}
+.neural-line--4 {
+  animation-delay: 0.48s;
+}
+.neural-line--5 {
+  animation-delay: 0.6s;
+}
+.neural-line--6 {
+  animation-delay: 0.72s;
+}
+.neural-line--7 {
+  animation-delay: 0.84s;
+}
+.neural-line--8 {
+  animation-delay: 0.96s;
+}
+.neural-line--9 {
+  animation-delay: 1.08s;
+}
+.neural-line--10 {
+  animation-delay: 1.2s;
+}
+.neural-line--11 {
+  animation-delay: 1.32s;
+}
+.neural-line--12 {
+  animation-delay: 1.44s;
+}
+.neural-line--13 {
+  animation-delay: 1.56s;
+}
+.neural-line--14 {
+  animation-delay: 1.68s;
+}
+.neural-line--15 {
+  animation-delay: 1.8s;
+}
+.neural-line--16 {
+  animation-delay: 1.92s;
+}
+.neural-line--17 {
+  animation-delay: 2.04s;
+}
+.neural-line--18 {
+  animation-delay: 2.16s;
+}
+.neural-line--19 {
+  animation-delay: 2.28s;
+}
+.neural-line--20 {
+  animation-delay: 2.4s;
+}
+.neural-line--21 {
+  animation-delay: 2.52s;
+}
+.neural-line--22 {
+  animation-delay: 2.64s;
+}
+.neural-line--23 {
+  animation-delay: 2.76s;
+}
+.neural-line--24 {
+  animation-delay: 2.88s;
+}
+.neural-line--25 {
+  animation-delay: 3s;
+}
+
+@keyframes line-pulse {
+  0%, 100% {
+    opacity: 0.2;
+    stroke-width: 1;
+  }
+  50% {
+    opacity: 0.6;
+    stroke-width: 2;
+  }
+}
+.neural-node {
+  fill: url(#nodeGradient);
+  opacity: 0.9;
+  animation: node-glow 2s ease-in-out infinite;
+}
+.neural-node--1 {
+  animation-delay: 0.15s;
+}
+.neural-node--2 {
+  animation-delay: 0.3s;
+}
+.neural-node--3 {
+  animation-delay: 0.45s;
+}
+.neural-node--4 {
+  animation-delay: 0.6s;
+}
+.neural-node--5 {
+  animation-delay: 0.75s;
+}
+.neural-node--6 {
+  animation-delay: 0.9s;
+}
+.neural-node--7 {
+  animation-delay: 1.05s;
+}
+.neural-node--8 {
+  animation-delay: 1.2s;
+}
+.neural-node--9 {
+  animation-delay: 1.35s;
+}
+.neural-node--10 {
+  animation-delay: 1.5s;
+}
+.neural-node--11 {
+  animation-delay: 1.65s;
+}
+.neural-node--12 {
+  animation-delay: 1.8s;
+}
+
+@keyframes node-glow {
+  0%, 100% {
+    opacity: 0.6;
+    r: 6;
+  }
+  50% {
+    opacity: 1;
+    r: 10;
+  }
+}
+.neural-pulse {
+  fill: #14b8a6;
+  opacity: 0.9;
+  filter: url(#glow);
+}
+.neural-pulse--1 {
+  fill: #10b981;
+}
+.neural-pulse--2 {
+  fill: #14b8a6;
+}
+.neural-pulse--3 {
+  fill: #10b981;
+}
+.neural-pulse--4 {
+  fill: #8b5cf6;
+}
+
+@media (max-width: 900px) {
+  .section.hero {
+    align-items: flex-start;
+    overflow-y: auto;
   }
 }
 .section.hero .hero__content h1 {
@@ -476,7 +662,6 @@ main {
   transition: box-shadow 200ms ease, transform 200ms ease, border-color 200ms ease;
   display: flex;
   flex-direction: column;
-  min-height: -moz-fit-content;
   min-height: fit-content;
 }
 .skill-card:hover:not([aria-expanded=true]) {
@@ -487,8 +672,7 @@ main {
 .skill-card[aria-expanded=true] {
   border-color: #10b981;
   box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2), 0 15px 40px rgba(0, 0, 0, 0.5);
-  -o-border-image: linear-gradient(135deg, #10b981, #14b8a6, #22d3ee) 1;
-     border-image: linear-gradient(135deg, #10b981, #14b8a6, #22d3ee) 1;
+  border-image: linear-gradient(135deg, #10b981, #14b8a6, #22d3ee) 1;
 }
 
 .skill-card__header {
@@ -728,6 +912,7 @@ main {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  margin-top: 16px;
 }
 
 .project__media {
@@ -739,11 +924,24 @@ main {
   width: 100%;
   min-height: 180px;
   border-radius: 14px;
-  background: linear-gradient(135deg, #14e8a2, #19e6d0);
+  background: linear-gradient(135deg, rgb(20.0597014925, 231.9402985075, 161.7313432836), rgb(25, 230, 207.5));
   display: grid;
   place-items: center;
   color: white;
   font-weight: 700;
+}
+
+.project__img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  object-fit: cover;
+  border: 1px solid #2a2a2a;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+.project__img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .timeline {
@@ -1072,14 +1270,14 @@ main {
 
 .publications__list {
   display: grid;
-  gap: 16px;
+  gap: 12px;
 }
 
 .publication {
   background: #111111;
   border: 1px solid #2a2a2a;
   border-radius: 14px;
-  padding: 24px;
+  padding: 16px 20px;
   transition: box-shadow 200ms ease, transform 200ms ease, border-color 200ms ease;
 }
 .publication:hover {
@@ -1091,14 +1289,27 @@ main {
   margin-bottom: 8px;
 }
 .publication h3 {
-  margin-bottom: 12px;
-  font-size: clamp(20px, 2.5vw, 24px);
+  margin-bottom: 8px;
+  font-size: clamp(18px, 2vw, 22px);
   color: #ffffff;
 }
 .publication p {
   color: #a3a3a3;
-  margin-bottom: 16px;
-  line-height: 1.7;
+  margin-bottom: 12px;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.publication--link {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+}
+.publication--link h3 {
+  transition: color 200ms ease;
+}
+.publication--link:hover h3 {
+  color: #10b981;
 }
 
 .publication__links {
@@ -1151,4 +1362,6 @@ main {
 
 .footer__links a {
   font-weight: 600;
-}/*# sourceMappingURL=main.css.map */
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,13 +1,13 @@
 .publications__list {
   display: grid;
-  gap: $space-4;
+  gap: $space-3;
 }
 
 .publication {
   background: $bg-section;
   border: 1px solid $border;
   border-radius: $radius;
-  padding: $space-6;
+  padding: $space-4 $space-5;
   transition: box-shadow $transition, transform $transition, border-color $transition;
 
   &:hover {
@@ -21,15 +21,30 @@
   }
 
   h3 {
-    margin-bottom: $space-3;
-    font-size: clamp(20px, 2.5vw, 24px);
+    margin-bottom: $space-2;
+    font-size: clamp(18px, 2vw, 22px);
     color: $text;
   }
 
   p {
     color: $text-muted;
-    margin-bottom: $space-4;
-    line-height: 1.7;
+    margin-bottom: $space-3;
+    line-height: 1.6;
+    font-size: 14px;
+  }
+}
+
+.publication--link {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+
+  h3 {
+    transition: color $transition;
+  }
+
+  &:hover h3 {
+    color: $primary;
   }
 }
 

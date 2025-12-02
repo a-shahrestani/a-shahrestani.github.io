@@ -101,7 +101,12 @@
   }
 }
 
-.project__links { display: flex; gap: $space-3; flex-wrap: wrap; }
+.project__links { 
+  display: flex; 
+  gap: $space-3; 
+  flex-wrap: wrap; 
+  margin-top: $space-4;
+}
 
 .project__media { justify-self: end; width: 100%; }
 
@@ -111,4 +116,18 @@
   background: linear-gradient(135deg, lighten($primary, 10%), lighten($secondary, 10%));
   display: grid; place-items: center;
   color: white; font-weight: 700;
+}
+
+.project__img {
+  width: 100%;
+  height: auto;
+  border-radius: $radius;
+  object-fit: cover;
+  border: 1px solid $border;
+  transition: transform $transition, box-shadow $transition;
+  
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
 }
