@@ -1,0 +1,28 @@
+$font-family: 'Inter', system-ui, -apple-system, sans-serif;
+$primary: #10b981; // Bright green
+$secondary: #14b8a6; // Teal-green (more green than blue)
+$primary-gradient: linear-gradient(135deg, #10b981, #14b8a6, #22d3ee); // Bright green-teal gradient
+$text: #ffffff; // White text
+$text-muted: #a3a3a3; // Light gray
+$bg-dark: #0a0a0a; // Black background
+$bg-section: #111111; // Dark gray section background
+$muted: #1a1a1a; // Dark gray muted
+$border: #2a2a2a; // Dark gray border
+$shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+
+$container-width: 1100px;
+$radius: 14px;
+$transition: 200ms ease;
+
+$space-2: 8px;
+$space-3: 12px;
+$space-4: 16px;
+$space-5: 20px;
+$space-6: 24px;
+$space-7: 32px;
+$space-8: 40px;
+$space-9: 56px;
+$space-10: 72px;
+
+$bp-md: 900px;
+$bp-sm: 640px;

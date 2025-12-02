@@ -1,0 +1,47 @@
+.card {
+  background: $bg-section;
+  border: 1px solid $border;
+  border-radius: $radius;
+  padding: $space-6;
+  box-shadow: $shadow;
+  transition: transform $transition, box-shadow $transition, border-color $transition;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    border-color: $primary;
+  }
+
+  h2, h3 {
+    margin-bottom: $space-3;
+    font-size: clamp(20px, 2.5vw, 24px);
+    color: $text;
+  }
+
+  p {
+    margin-bottom: $space-4;
+    color: $text-muted;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: $space-4;
+
+    li {
+      position: relative;
+      padding-left: $space-5;
+      margin-bottom: $space-3;
+      color: $text-muted;
+      line-height: 1.7;
+
+      &::before {
+        content: '•';
+        position: absolute;
+        left: 0;
+        color: $primary;
+        font-weight: 700;
+      }
+    }
+  }
+}

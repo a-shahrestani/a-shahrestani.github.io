@@ -1,0 +1,41 @@
+.publications__list {
+  display: grid;
+  gap: $space-4;
+}
+
+.publication {
+  background: $bg-section;
+  border: 1px solid $border;
+  border-radius: $radius;
+  padding: $space-6;
+  transition: box-shadow $transition, transform $transition, border-color $transition;
+
+  &:hover {
+    box-shadow: $shadow;
+    transform: translateY(-2px);
+    border-color: $primary;
+  }
+
+  .eyebrow {
+    margin-bottom: $space-2;
+  }
+
+  h3 {
+    margin-bottom: $space-3;
+    font-size: clamp(20px, 2.5vw, 24px);
+    color: $text;
+  }
+
+  p {
+    color: $text-muted;
+    margin-bottom: $space-4;
+    line-height: 1.7;
+  }
+}
+
+.publication__links {
+  display: flex;
+  gap: $space-3;
+  flex-wrap: wrap;
+}
+

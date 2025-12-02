@@ -1,0 +1,52 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  backdrop-filter: blur(10px);
+  background: rgba(10, 10, 10, 0.9);
+  z-index: 100;
+  border-bottom: 1px solid $border;
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $space-4 0;
+}
+
+.nav__brand {
+  font-weight: 700;
+  font-size: clamp(16px, 2vw, 18px);
+  color: $text;
+}
+
+.nav__links {
+  display: flex;
+  gap: $space-4;
+  flex-wrap: wrap;
+
+  a {
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: background $transition, color $transition;
+
+    &:hover {
+      background: $muted;
+      color: $primary;
+    }
+  }
+}
+
+@include respond(sm) {
+  .nav__links {
+    gap: $space-2;
+    font-size: 13px;
+  }
+
+  .nav__links a {
+    padding: 6px 8px;
+  }
+}

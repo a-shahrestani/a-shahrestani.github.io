@@ -1,0 +1,43 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: $radius;
+  border: 1px solid transparent;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform $transition, box-shadow $transition, background $transition, color $transition;
+  box-shadow: $shadow;
+
+  &:hover { transform: translateY(-2px); }
+  &:active { transform: translateY(0); }
+}
+
+.btn--primary {
+  background: $primary-gradient;
+  color: white;
+  border: none;
+  
+  &:hover {
+    background: linear-gradient(135deg, #34d399, #10b981, #14b8a6);
+  }
+}
+
+.btn--ghost {
+  background: $bg-section;
+  color: $text;
+  border: 1px solid $border;
+  box-shadow: none;
+  
+  &:hover {
+    background: $muted;
+    border-color: $primary;
+  }
+}
+
+.btn--small {
+  padding: 8px 14px;
+  font-size: 13px;
+}

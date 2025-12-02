@@ -1,0 +1,48 @@
+.skills__summary {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: $space-6;
+  margin-top: $space-6;
+
+  @include respond(md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include respond(sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.skills__summary-list {
+  h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: $primary;
+    margin-bottom: $space-3;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      padding: $space-2 0;
+      color: $text-muted;
+      font-size: 13px;
+      line-height: 1.6;
+      border-bottom: 1px solid rgba(42, 42, 42, 0.5);
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+.skills__detailed {
+  margin-top: $space-8;
+}
+

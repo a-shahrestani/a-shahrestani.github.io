@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Afshin Shahrestani | Machine Learning Engineer</title>
+  <meta name="description" content="Machine Learning Engineer specializing in computer vision, MLOps, and geospatial ML systems. From research to production." />
+  <meta name="keywords" content="machine learning, computer vision, MLOps, deep learning, data science, portfolio" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style/main.css" />
+</head>
+<body data-page="index">
+  <aside class="sidebar" aria-label="Section navigation">
+    <nav class="sidebar__nav">
+      <a href="#hero" class="sidebar__link active" data-section="hero">Home</a>
+      <a href="#about" class="sidebar__link" data-section="about">About</a>
+      <a href="#experience" class="sidebar__link" data-section="experience">Experience</a>
+      <a href="#skills" class="sidebar__link" data-section="skills">Skills</a>
+      <a href="#projects" class="sidebar__link" data-section="projects">Projects</a>
+      <a href="#publications" class="sidebar__link" data-section="publications">Publications</a>
+      <a href="#hobbies-preview" class="sidebar__link" data-section="hobbies-preview">Hobbies</a>
+      <a href="#contact" class="sidebar__link" data-section="contact">Contact</a>
+    </nav>
+  </aside>
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__brand">Afshin Shahrestani</a>
+      <nav class="nav__links" aria-label="Main navigation">
+        <a href="#hero">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="hobbies.html">Hobbies</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero section active">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <p class="eyebrow">Machine Learning Engineer</p>
+          <h1>Hi, I'm <span class="text-gradient">Afshin Shahrestani</span>.</h1>
+          <p class="lead">Machine Learning Engineer with a track record of taking ideas from research to reliable production systems. I design end-to-end ML pipelines—data capture and curation, model development, and MLOps—to meet real-world runtime, reliability, and maintainability needs.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#experience">View experience</a>
+            <a class="btn btn--ghost" href="#contact">Let's talk</a>
+          </div>
+        </div>
+        <div class="hero__image" aria-hidden="true">
+          <div class="hero__blob"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container two-col">
+        <div class="section__header">
+          <p class="eyebrow">Summary</p>
+          <h2>From research to production systems.</h2>
+        </div>
+        <div class="section__body">
+          <p>I design end-to-end ML pipelines—data capture and curation, model development, and MLOps—to meet real-world runtime, reliability, and maintainability needs. Recent work centers on computer vision and geospatial/camera-calibrated outputs, turning field data into decision-ready insights for customers.</p>
+          <p>I'm at my best owning the lifecycle, shaping metrics and review cadences, and collaborating closely with product and platform teams to ship dependable ML services. As the first ML hire at PavePal, I built the CV/ML function from scratch and continue to partner with leadership, backend, and product teams to ship production code.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section section--muted section--scrollable">
+      <div class="container">
+        <div class="section__header">
+          <p class="eyebrow">Experience</p>
+          <h2>Impact in production</h2>
+          <p class="section__lede">Key roles and achievements. Expand for details.</p>
+          <div class="expand-controls">
+            <button class="btn btn--ghost btn--small" id="expand-all-experience">
+              Expand all
+            </button>
+            <button class="btn btn--ghost btn--small" id="collapse-all-experience" style="display:none;">
+              Collapse all
+            </button>
+          </div>
+        </div>
+        <div class="timeline">
+          <article class="timeline__item" aria-expanded="false">
+            <button class="timeline__header" aria-expanded="false">
+              <div class="timeline__header-content">
+                <p class="eyebrow">Oct 2022 - Present - Lead Machine Learning Engineer & Data Scientist</p>
+                <h3>PavePal Technologies Inc</h3>
+                <p class="timeline__summary">First ML hire; built the CV/ML function from scratch. Design and implement computer vision models for pavement defect detection and geospatial data pipelines.</p>
+              </div>
+              <span class="timeline__icon">▼</span>
+            </button>
+            <div class="timeline__content">
+              <ul>
+                <li>Designed, implemented, and optimized detection/segmentation models (YOLO, Faster/Mask R-CNN, DeepLab, DETR-style) in PyTorch/OpenCV to meet runtime/latency/memory targets on CPU/GPU.</li>
+                <li>Built data pipelines for large, real-world field video → imagery (extraction, sanity checks, class balancing, filtering, versioning) tailored to semi-low-resource, highly imbalanced domains.</li>
+                <li>Added geospatial & calibration components (geotagging, coordinate transforms, map alignment; intrinsics/extrinsics, distortion, image-to-world sizing) to produce accurate, report-ready outputs.</li>
+                <li>Stood up CI/CD and Dockerized services on Vertex AI / Cloud Run and SageMaker / ECS/EC2; introduced code reviews and outlined monitoring approach (error buckets, drift checks, retraining triggers).</li>
+                <li>Designed interactive Dash + Flask demo applications to showcase real-time inference and map integration.</li>
+                <li>Collaborate with executives on product features, roadmap, and AI-driven maintenance planning and defect sizing.</li>
+                <li>Researched automated AI-based pavement scoring and treatment planning using computer vision and vision-language models (VLMs).</li>
+              </ul>
+              <p><strong>Stack:</strong> Python, PyTorch, YOLO (v5-v11), Detectron2, Roboflow, OpenCV, AWS SageMaker, EC2, ECS, Fargate, SQS, GCP Vertex AI, GCP Compute Engine, Docker, MongoDB, Mapbox, Folium, Flask, Dash, GitHub Actions, MLFlow.</p>
+            </div>
+          </article>
+
+          <article class="timeline__item" aria-expanded="false">
+            <button class="timeline__header" aria-expanded="false">
+              <div class="timeline__header-content">
+                <p class="eyebrow">Sep 2022 - Dec 2024 - Graduate Research Assistant</p>
+                <h3>University of British Columbia, SALMALIS Lab</h3>
+                <p class="timeline__summary">Conducted advanced research on Generative Networks and computer vision for transportation engineering applications.</p>
+              </div>
+              <span class="timeline__icon">▼</span>
+            </button>
+            <div class="timeline__content">
+              <ul>
+                <li>Led Generative Networks projects (DCGAN, WGAN, Conditional GAN) to synthetically generate road image data, enhancing crack classification accuracy by 15%. Two papers written on the subject.</li>
+                <li>Developed and implemented road infrastructure object detection, segmentation, and classification with models such as YOLOv5 and Faster R-CNN, pipelines using image and 3D point clouds.</li>
+                <li>Worked on enhancement of 3D point cloud segmentation models using attention mechanisms.</li>
+                <li>Undertook role of Lab Manager, responsible for lab operations including system maintenance, hardware setups, and software installations.</li>
+                <li>Mentored 3 summer interns, giving them projects, tasks, and research material, while teaching them about different aspects of deep learning in transportation.</li>
+              </ul>
+              <p><strong>Stack:</strong> Python, PyTorch, TensorFlow, Keras, YOLOv5, Faster R-CNN, 3D Point Cloud Processing, Computer Vision.</p>
+            </div>
+          </article>
+
+          <article class="timeline__item" aria-expanded="false">
+            <button class="timeline__header" aria-expanded="false">
+              <div class="timeline__header-content">
+                <p class="eyebrow">Dec 2021 - May 2022 - Machine Learning Engineer, Data Analyst</p>
+                <h3>Aran Accelerator</h3>
+                <p class="timeline__summary">Built and deployed real-time predictive models for financial time series with reinforcement learning research track.</p>
+              </div>
+              <span class="timeline__icon">▼</span>
+            </button>
+            <div class="timeline__content">
+              <ul>
+                <li>Built and deployed real-time predictive models for financial time series (LSTM/RNN) to a live market data feed with ~5s end-to-end latency; supported multi-granularity inputs (1-minute → 4-hour candles).</li>
+                <li>Designed data ingestion & feature pipelines, reproducible training/evaluation harnesses, and experiment tracking.</li>
+                <li>Explored reinforcement learning as an R&D track (policy variants, reward shaping); evaluated via backtests, documented assumptions/limitations.</li>
+                <li>Conducted comprehensive research and developed predictive models for asset price trends and decision-making algorithms, leveraging deep reinforcement learning techniques to automate trading, yielding profits up to 2000% in 2021-2022.</li>
+                <li>Led the machine learning team of a startup, trained 5 interns, and collaborated with other teams for model integration into systems.</li>
+                <li>Presented findings, progress reports, and future plans to investors and managers at the company.</li>
+              </ul>
+              <p><strong>Stack:</strong> Python, TensorFlow, Deep Learning, Reinforcement Learning, LSTM, RNN, Time Series Analysis, Data Mining.</p>
+            </div>
+          </article>
+
+          <article class="timeline__item timeline__item--hidden" aria-expanded="false" style="display:none;">
+            <button class="timeline__header" aria-expanded="false">
+              <div class="timeline__header-content">
+                <p class="eyebrow">Jan 2023 - Jun 2024 - Teaching Assistant</p>
+                <h3>University of British Columbia</h3>
+                <p class="timeline__summary">Served as a Teaching Assistant for several courses with responsibilities ranging from teaching lab sessions to exam grading.</p>
+              </div>
+              <span class="timeline__icon">▼</span>
+            </button>
+            <div class="timeline__content">
+              <ul>
+                <li>Gained a satisfaction score of at least 90% for the classes.</li>
+                <li>ENGR 418 Machine Learning: Dr. Anas Chaaban</li>
+                <li>APSC 258 Applications of Engineering Design: Lab, Dr. Jahangir Hossain (3 lab sessions)</li>
+                <li>COSC 328 Introduction to Networks: Lab and Marker, Dr. Fatemeh Hendijani Fard (5 lab sessions)</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline__item timeline__item--hidden" aria-expanded="false" style="display:none;">
+            <button class="timeline__header" aria-expanded="false">
+              <div class="timeline__header-content">
+                <p class="eyebrow">Dec 2020 - Feb 2022 - Undergraduate Research Assistant, IP-PBX Lab</p>
+                <h3>Ferdowsi University of Mashhad</h3>
+                <p class="timeline__summary">Researched and developed several anomaly detection methods in power consumption data.</p>
+              </div>
+              <span class="timeline__icon">▼</span>
+            </button>
+            <div class="timeline__content">
+              <ul>
+                <li>Gained experience in machine learning, deep learning, data mining, and big data handling.</li>
+                <li>The developed models had 92% accuracy in trend prediction and 90% accuracy in fraud detection.</li>
+                <li>Two peer-reviewed papers regarding anomaly and fraud detection using AI and deep learning were published.</li>
+                <li>Managed 3 summer interns during my time in the lab, defining projects, evaluating their tasks, and holding weekly meetings with them.</li>
+              </ul>
+              <p><strong>Stack:</strong> Python, Deep Learning, Forecasting, Anomaly Detection, Big Data.</p>
+            </div>
+          </article>
+
+          <article class="timeline__item timeline__item--hidden" aria-expanded="false" style="display:none;">
+            <button class="timeline__header" aria-expanded="false">
+              <div class="timeline__header-content">
+                <p class="eyebrow">Sep 2018 - Jan 2022 - Teaching Assistant</p>
+                <h3>Ferdowsi University of Mashhad</h3>
+                <p class="timeline__summary">Teaching assistant for several courses with responsibilities including teaching, assignment creation, and grading.</p>
+              </div>
+              <span class="timeline__icon">▼</span>
+            </button>
+            <div class="timeline__content">
+              <ul>
+                <li>Object Oriented Designs of Systems (Master's class)</li>
+                <li>Object Oriented Designs of Systems (Bachelor's class)</li>
+                <li>Languages and Machines Theory (5 Classes)</li>
+                <li>Data Structures</li>
+                <li>Design & Analysis of Software Systems (2 Classes)</li>
+                <li>Software Engineering Lab (2 Classes)</li>
+                <li>Database (2 Classes)</li>
+                <li>Information Retrieval</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+        <div class="hero__actions" style="margin-top: 32px; justify-content: center;">
+          <button class="btn btn--primary" id="load-more-experience">See more experience</button>
+          <button class="btn btn--ghost" id="load-less-experience" style="display:none;">See less</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section section--scrollable">
+      <div class="container">
+        <div class="section__header">
+          <p class="eyebrow">Tools and stack</p>
+          <h2>Tools and Stack</h2>
+        </div>
+        <div class="skills__summary">
+          <div class="skills__summary-list">
+            <h4>Programming Languages</h4>
+            <ul>
+              <li>Python (advanced)</li>
+              <li>Java (intermediate)</li>
+              <li>C (intermediate)</li>
+              <li>Bash (beginner)</li>
+            </ul>
+          </div>
+          <div class="skills__summary-list">
+            <h4>ML/DL Frameworks</h4>
+            <ul>
+              <li>PyTorch</li>
+              <li>TensorFlow</li>
+              <li>Keras</li>
+              <li>Scikit-Learn</li>
+              <li>YOLO (v5-v11)</li>
+              <li>Detectron2</li>
+              <li>Roboflow</li>
+              <li>Inference</li>
+              <li>Supervision</li>
+              <li>SAM2</li>
+            </ul>
+          </div>
+          <div class="skills__summary-list">
+            <h4>Data Processing</h4>
+            <ul>
+              <li>Pandas</li>
+              <li>NumPy</li>
+              <li>Matplotlib</li>
+              <li>Seaborn</li>
+              <li>OpenCV</li>
+              <li>PIL</li>
+              <li>CVAT</li>
+              <li>MongoDB</li>
+              <li>MySQL</li>
+              <li>SQL Server</li>
+            </ul>
+          </div>
+          <div class="skills__summary-list">
+            <h4>Cloud & Deployment</h4>
+            <ul>
+              <li>AWS SageMaker</li>
+              <li>EC2, ECS, Fargate</li>
+              <li>SQS</li>
+              <li>GCP Vertex AI</li>
+              <li>GCP Compute Engine</li>
+              <li>Docker</li>
+              <li>Git, GitHub</li>
+            </ul>
+          </div>
+          <div class="skills__summary-list">
+            <h4>MLOps & Tools</h4>
+            <ul>
+              <li>MLFlow</li>
+              <li>GitHub Actions</li>
+              <li>CI/CD Pipelines</li>
+              <li>Git-based Workflow</li>
+              <li>API Design</li>
+              <li>System Architecture</li>
+            </ul>
+          </div>
+        </div>
+        <div class="skills__detailed" style="display:none;">
+          <div class="skills__grid">
+            <article class="card"><h3>Programming Languages</h3><p>Python (advanced), Java (intermediate), C (intermediate), Bash (beginner).</p></article>
+            <article class="card"><h3>ML/DL Frameworks</h3><p>PyTorch, TensorFlow, Keras, Scikit-Learn, YOLO (v5-v11), Detectron2, Roboflow, Inference, Supervision, SAM2.</p></article>
+            <article class="card"><h3>Data Processing</h3><p>Pandas, NumPy, Matplotlib, Seaborn, OpenCV, PIL, CVAT, MongoDB, MySQL, SQL Server.</p></article>
+            <article class="card"><h3>Cloud & Deployment</h3><p>AWS SageMaker, EC2, ECS, Fargate, SQS, GCP Vertex AI, GCP Compute Engine, Docker, Git, GitHub.</p></article>
+            <article class="card"><h3>MLOps & Tools</h3><p>MLFlow, GitHub Actions, CI/CD Pipelines, Git-based Workflow, API Design, System Architecture.</p></article>
+            <article class="card"><h3>Geospatial & Visualization</h3><p>Mapbox, Folium, Geotagging, Coordinate Transforms, Camera Calibration, Image-to-World Sizing.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section section--muted">
+      <div class="container">
+        <div class="section__header">
+          <p class="eyebrow">Projects</p>
+          <h2>Selected work</h2>
+          <p class="section__lede">Highlights from recent projects. <a href="projects.html">View all projects →</a></p>
+        </div>
+        <div class="projects__list projects__list--no-image">
+          <article class="project project--no-image">
+            <div class="project__text">
+              <h3>Pavement Defect Detection & Geospatial Analysis</h3>
+              <p>Built end-to-end computer vision system for automated pavement defect detection and segmentation using YOLOv8/11, with geospatial data pipelines and map integration for road condition analysis.</p>
+              <div class="project__links">
+                <a class="btn btn--primary" href="projects.html">View details →</a>
+              </div>
+            </div>
+          </article>
+          <article class="project project--no-image">
+            <div class="project__text">
+              <h3>AutoML Experiment Runner</h3>
+              <p>Designed a lightweight experiment harness that provisions GPU workloads, tracks metrics, and reports best candidates to Slack, cutting prototyping time by 40%.</p>
+              <div class="project__links">
+                <a class="btn btn--primary" href="projects.html">View details →</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications" class="section">
+      <div class="container">
+        <div class="section__header">
+          <p class="eyebrow">Publications</p>
+          <h2>Research contributions</h2>
+          <p class="section__lede">Peer-reviewed papers and research publications. <a href="projects.html">View all publications →</a></p>
+        </div>
+        <div class="publications__list">
+          <article class="publication">
+            <p class="eyebrow">Research Publication</p>
+            <h3>Generative Networks for Road Image Data</h3>
+            <p>Developed DCGAN, WGAN, and Conditional GAN models to synthetically generate road image data, enhancing crack classification accuracy by 15%. Two papers written on the subject.</p>
+            <div class="publication__links">
+              <a class="btn btn--ghost btn--small" href="projects.html">View details →</a>
+            </div>
+          </article>
+          <article class="publication">
+            <p class="eyebrow">Anomaly Detection Research</p>
+            <h3>AI-Based Fraud Detection in Power Consumption</h3>
+            <p>Two peer-reviewed papers regarding anomaly and fraud detection using AI and deep learning. Models achieved 92% accuracy in trend prediction and 90% accuracy in fraud detection.</p>
+            <div class="publication__links">
+              <a class="btn btn--ghost btn--small" href="projects.html">View details →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="hobbies-preview" class="section section--muted">
+      <div class="container two-col">
+        <div class="section__header">
+          <p class="eyebrow">Beyond work</p>
+          <h2>Photo essays, synth jams, trails.</h2>
+        </div>
+        <div class="section__body">
+          <p>I document backcountry trips, analog photography experiments, and modular synth sketches. The hobbies page has albums, gear notes, and personal write-ups.</p>
+          <a class="btn btn--primary" href="hobbies.html">Explore hobbies</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container contact">
+        <div class="contact__text">
+          <p class="eyebrow">Contact</p>
+          <h2>Let's build something measurable.</h2>
+          <p>Open to ML engineering roles, technical leadership opportunities, and collaborative projects in computer vision and MLOps.</p>
+        </div>
+        <div class="contact__actions">
+          <a class="btn btn--primary" href="mailto:ash.shahrestani@gmail.com">Email me</a>
+          <a class="btn btn--ghost" href="https://www.linkedin.com/in/afshin-shahrestani/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn btn--ghost" href="https://github.com/a-shahrestani" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; <span id="year"></span> Afshin Shahrestani - Machine Learning Engineer</p>
+      <div class="footer__links">
+        <a href="https://www.linkedin.com/in/afshin-shahrestani/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="https://github.com/a-shahrestani" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="mailto:ash.shahrestani@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects & Publications | Afshin Shahrestani</title>
+  <meta name="description" content="Projects and research publications by Afshin Shahrestani - Computer Vision, Deep Learning, and ML Systems." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style/main.css" />
+</head>
+<body data-page="projects">
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__brand">Afshin Shahrestani</a>
+      <nav class="nav__links" aria-label="Main navigation">
+        <a href="index.html#hero">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="hobbies.html">Hobbies</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section hero">
+      <div class="container">
+        <p class="eyebrow">Projects & Publications</p>
+        <h1>Technical projects and research contributions.</h1>
+        <p class="lead">Case studies from production ML systems and applied research publications.</p>
+      </div>
+    </section>
+
+    <section class="section section--muted">
+      <div class="container">
+        <div class="section__header">
+          <p class="eyebrow">Projects</p>
+          <h2>Production systems and tools</h2>
+        </div>
+        <div class="projects__list">
+          <article class="project">
+            <div class="project__text">
+              <h3>Contextual Support Copilot</h3>
+              <p>Built an LLM-augmented assistant for support agents using retrieval-augmented generation, reducing average handle time by 22% across 2k+ daily tickets.</p>
+              <ul>
+                <li>Designed RAG pipeline with semantic search over 50k+ knowledge base articles.</li>
+                <li>Deployed real-time inference service handling 2k+ requests/day with &lt;200ms p95 latency.</li>
+                <li>Implemented feedback loop for continuous model improvement based on agent ratings.</li>
+              </ul>
+              <p><strong>Stack:</strong> Python, LangChain, OpenAI API, Pinecone, FastAPI, Docker, Kubernetes.</p>
+              <div class="project__links">
+                <a class="btn btn--primary" href="#" target="_blank" rel="noreferrer">Case study</a>
+                <a class="btn btn--ghost" href="#" target="_blank" rel="noreferrer">Source</a>
+              </div>
+            </div>
+            <div class="project__media" aria-hidden="true">
+              <div class="project__thumb">RAG</div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project__text">
+              <h3>AutoML Experiment Runner</h3>
+              <p>Designed a lightweight experiment harness that provisions GPU workloads, tracks metrics, and reports best candidates to Slack, cutting prototyping time by 40%.</p>
+              <ul>
+                <li>Built automated hyperparameter search with early stopping and resource allocation.</li>
+                <li>Integrated with MLflow for experiment tracking and model versioning.</li>
+                <li>Created Slack bot for real-time experiment updates and best model notifications.</li>
+              </ul>
+              <p><strong>Stack:</strong> Python, MLflow, Kubernetes, Slack API, Prometheus.</p>
+              <div class="project__links">
+                <a class="btn btn--primary" href="#" target="_blank" rel="noreferrer">Overview</a>
+                <a class="btn btn--ghost" href="#" target="_blank" rel="noreferrer">Source</a>
+              </div>
+            </div>
+            <div class="project__media" aria-hidden="true">
+              <div class="project__thumb">Ops</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section__header">
+          <p class="eyebrow">Publications</p>
+          <h2>Applied research and writing</h2>
+        </div>
+        <div class="projects__list">
+          <article class="project">
+            <div class="project__text">
+              <p class="eyebrow">ACL 2024</p>
+              <h3>Efficient Multilingual Retrieval</h3>
+              <p>Introduced a contrastive dual-encoder with adaptive distillation, improving recall@10 by 6% on a 12-language benchmark.</p>
+              <ul>
+                <li>Proposed adaptive knowledge distillation strategy for cross-lingual transfer.</li>
+                <li>Evaluated on 12 languages with consistent improvements across low-resource languages.</li>
+                <li>Open-sourced codebase and model checkpoints for reproducibility.</li>
+              </ul>
+              <div class="project__links">
+                <a class="btn btn--primary" href="#" target="_blank" rel="noreferrer">Read paper</a>
+                <a class="btn btn--ghost" href="#" target="_blank" rel="noreferrer">Code</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project__text">
+              <p class="eyebrow">NeurIPS 2023</p>
+              <h3>Monitoring Drift in Graph ML</h3>
+              <p>Proposed a topology-aware drift metric that triggered earlier alerts on dynamic recommendation graphs.</p>
+              <ul>
+                <li>Developed graph structure-aware drift detection using spectral graph theory.</li>
+                <li>Validated on production recommendation systems with 10M+ nodes.</li>
+                <li>Reduced false positive alerts by 35% compared to feature-based drift detection.</li>
+              </ul>
+              <div class="project__links">
+                <a class="btn btn--primary" href="#" target="_blank" rel="noreferrer">Read paper</a>
+                <a class="btn btn--ghost" href="#" target="_blank" rel="noreferrer">Code</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--muted">
+      <div class="container contact">
+        <div class="contact__text">
+          <h2>Interested in collaborating?</h2>
+          <p>Open to discussing projects, research opportunities, or technical consulting.</p>
+        </div>
+        <div class="contact__actions">
+          <a class="btn btn--primary" href="mailto:ash.shahrestani@gmail.com">Email me</a>
+          <a class="btn btn--ghost" href="index.html#hero">Back to portfolio</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; <span id="year"></span> Afshin Shahrestani - Machine Learning Engineer</p>
+      <div class="footer__links">
+        <a href="https://www.linkedin.com/in/afshin-shahrestani/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="https://github.com/a-shahrestani" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="mailto:ash.shahrestani@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>
+

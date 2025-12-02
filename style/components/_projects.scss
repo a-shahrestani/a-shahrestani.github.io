@@ -1,0 +1,114 @@
+.projects__list { display: grid; gap: $space-5; }
+
+.projects__list--no-image {
+  .project {
+    grid-template-columns: 1fr;
+  }
+}
+
+.project {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: $space-5;
+  align-items: center;
+  padding: $space-6;
+  border: 1px solid $border;
+  border-radius: $radius;
+  box-shadow: $shadow;
+  background: $bg-section;
+  transition: transform $transition, box-shadow $transition, border-color $transition;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    border-color: $primary;
+  }
+
+  &--no-image {
+    grid-template-columns: 1fr;
+  }
+
+  @include respond(md) { grid-template-columns: 1fr; }
+}
+
+// Timeline-specific styling (for experience page)
+#timeline .project {
+  grid-template-columns: 1fr;
+  position: relative;
+  padding-left: $space-8;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: $space-6;
+    bottom: $space-6;
+    width: 3px;
+    background: $primary-gradient;
+    border-radius: 2px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: $space-6;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: $primary-gradient;
+    border: 3px solid $bg-dark;
+    box-shadow: 0 0 0 2px $primary;
+  }
+
+  &:last-child::before {
+    display: none;
+  }
+}
+
+.project__text {
+  h2, h3 { margin-bottom: $space-3; }
+  
+  h2 { font-size: clamp(24px, 3vw, 32px); }
+  
+  p { color: $text-muted; margin-bottom: $space-4; }
+  
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin: $space-4 0;
+    
+    li {
+      position: relative;
+      padding-left: $space-5;
+      margin-bottom: $space-3;
+      color: $text-muted;
+      line-height: 1.7;
+      
+      &::before {
+        content: '→';
+        position: absolute;
+        left: 0;
+        color: $primary;
+        font-weight: 700;
+      }
+    }
+  }
+  
+  strong {
+    color: $text;
+    font-weight: 600;
+  }
+}
+
+.project__links { display: flex; gap: $space-3; flex-wrap: wrap; }
+
+.project__media { justify-self: end; width: 100%; }
+
+.project__thumb {
+  width: 100%; min-height: 180px;
+  border-radius: $radius;
+  background: linear-gradient(135deg, lighten($primary, 10%), lighten($secondary, 10%));
+  display: grid; place-items: center;
+  color: white; font-weight: 700;
+}

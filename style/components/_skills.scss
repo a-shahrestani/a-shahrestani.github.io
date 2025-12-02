@@ -1,0 +1,19 @@
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: $space-5;
+
+  @include respond(sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.skills__grid h2,
+.skills__grid h3 {
+  margin-bottom: $space-3;
+}
+
+.skills__grid p {
+  color: $text-muted;
+  margin-bottom: $space-4;
+}

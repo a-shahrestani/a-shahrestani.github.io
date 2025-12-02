@@ -1,0 +1,190 @@
+// Timeline expandable component
+.timeline {
+  display: grid;
+  gap: $space-3;
+  position: relative;
+  padding-left: $space-8;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: $primary-gradient;
+    border-radius: 2px;
+  }
+
+  @include respond(md) {
+    padding-left: $space-6;
+  }
+}
+
+.timeline__item {
+  position: relative;
+  background: $bg-section;
+  border: 1px solid $border;
+  border-radius: $radius;
+  overflow: hidden;
+  transition: box-shadow $transition, opacity $transition, border-color $transition;
+  opacity: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -$space-8 + 6px;
+    top: $space-6;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: $primary-gradient;
+    border: 3px solid $bg-dark;
+    box-shadow: 0 0 0 2px $primary;
+    z-index: 2;
+    transition: transform $transition;
+  }
+
+  &:hover {
+    box-shadow: $shadow;
+  }
+
+  &[aria-expanded="true"] {
+    &::before {
+      transform: scale(1.2);
+    }
+  }
+
+  &--hidden {
+    display: none !important;
+    opacity: 1;
+    margin: 0;
+  }
+
+  &--hidden[style*="display: block"] {
+    display: block !important;
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  @include respond(md) {
+    &::before {
+      left: -$space-6 + 6px;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.timeline__header {
+  width: 100%;
+  text-align: left;
+  padding: $space-4 $space-5;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: $space-4;
+  transition: background $transition;
+
+  &:hover {
+    background: $muted;
+  }
+
+  &:focus {
+    outline: 2px solid $primary;
+    outline-offset: -2px;
+  }
+}
+
+.timeline__header-content {
+  flex: 1;
+
+  .eyebrow {
+    color: $text-muted;
+  }
+
+  h3 {
+    color: $text;
+    margin-top: $space-2;
+    margin-bottom: 0;
+  }
+}
+
+.timeline__summary {
+  color: $text-muted;
+  margin-top: $space-2;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.timeline__icon {
+  flex-shrink: 0;
+  font-size: 12px;
+  color: $primary;
+  transition: transform $transition;
+  margin-top: $space-2;
+  align-self: flex-start;
+}
+
+.timeline__item[aria-expanded="true"] .timeline__icon {
+  transform: rotate(180deg);
+}
+
+.timeline__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+  padding: 0 $space-5;
+}
+
+.timeline__item[aria-expanded="true"] .timeline__content {
+  max-height: 2000px;
+  padding: 0 $space-5 $space-4;
+}
+
+.timeline__content ul {
+  list-style: none;
+  padding-left: 0;
+  margin: $space-4 0;
+
+  li {
+    position: relative;
+    padding-left: $space-5;
+    margin-bottom: $space-3;
+      color: $text-muted;
+    line-height: 1.7;
+
+    &::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: $primary;
+      font-weight: 700;
+    }
+  }
+}
+
+.timeline__content strong {
+  color: $text;
+  font-weight: 600;
+}
+
+// Expand controls
+.expand-controls {
+  display: flex;
+  gap: $space-3;
+  margin-top: $space-4;
+  flex-wrap: wrap;
+}
+

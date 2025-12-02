@@ -1,0 +1,18 @@
+.footer {
+  padding: $space-5 0;
+  border-top: 1px solid $border;
+  background: $bg-dark;
+  color: $text-muted;
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $space-3;
+  flex-wrap: wrap;
+}
+
+.footer__links { display: flex; gap: $space-4; }
+
+.footer__links a { font-weight: 600; }

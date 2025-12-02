@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experience | Afshin Shahrestani</title>
+  <meta name="description" content="Work experience and career timeline of Afshin Shahrestani - Machine Learning Engineer." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style/main.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__brand">Afshin Shahrestani</a>
+      <nav class="nav__links" aria-label="Main navigation">
+        <a href="index.html#hero">Home</a>
+        <a href="experience.html">Experience</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="hobbies.html">Hobbies</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="section hero">
+      <div class="container">
+        <p class="eyebrow">Experience</p>
+        <h1>Stories behind the shipped systems.</h1>
+        <p class="lead">Deep dives into the roles, teams, and measurable impact from research to production ML systems.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="mailto:ash.shahrestani@gmail.com">Discuss opportunities</a>
+          <a class="btn btn--ghost" href="#timeline">Jump to timeline</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="timeline" class="section section--muted">
+      <div class="container projects__list">
+        <article class="project">
+          <div class="project__text">
+            <p class="eyebrow">Oct 2022 - Present - Lead Machine Learning Engineer & Data Scientist</p>
+            <h2>PavePal Technologies Inc</h2>
+            <p>First ML hire; built the CV/ML function from scratch and later working with other ML engineers while partnering with leadership, backend, and product to ship production code.</p>
+            <ul>
+              <li>Designed, implemented, and optimized detection/segmentation models (YOLO, Faster/Mask R-CNN, DeepLab, DETR-style) in PyTorch/OpenCV to meet runtime/latency/memory targets on CPU/GPU; results drive internal pipelines that power customer data/reports.</li>
+              <li>Built data pipelines for large, real-world field video → imagery (extraction, sanity checks, class balancing, filtering, versioning) tailored to semi-low-resource, highly imbalanced domains.</li>
+              <li>Added geospatial & calibration components (geotagging, coordinate transforms, map alignment; intrinsics/extrinsics, distortion, image-to-world sizing) to produce accurate, report-ready outputs; defined data-capture practices to improve quality.</li>
+              <li>Stood up CI/CD and Dockerized services on Vertex AI / Cloud Run and SageMaker / ECS/EC2; introduced code reviews and outlined a practical monitoring approach (error buckets, drift checks, retraining triggers) for maturing deployments.</li>
+              <li>Designed interactive Dash + Flask demo applications to showcase real-time inference and map integration.</li>
+              <li>Collaborate with executives on product features, roadmap, and AI-driven maintenance planning and defect sizing.</li>
+              <li>Researched automated AI-based pavement scoring and treatment planning using computer vision and vision-language models (VLMs).</li>
+            </ul>
+            <p><strong>Stack:</strong> Python, PyTorch, YOLO (v5-v11), Detectron2, Roboflow, OpenCV, AWS SageMaker, EC2, ECS, Fargate, SQS, GCP Vertex AI, GCP Compute Engine, Docker, MongoDB, Mapbox, Folium, Flask, Dash, GitHub Actions, MLFlow.</p>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project__text">
+            <p class="eyebrow">Sep 2022 - Dec 2024 - Graduate Research Assistant</p>
+            <h2>University of British Columbia, SALMALIS Lab</h2>
+            <p>Served as a Research Assistant in the SALMALIS Lab at the University of British Columbia, focusing on developing machine and deep learning applications for transportation engineering under the supervision of Dr. Suliman Gargoum.</p>
+            <ul>
+              <li>Conducted advanced research on Generative Networks, including DCGAN, WGAN, and Conditional GAN, to create synthetic road image datasets. This work led to a 15% improvement in crack classification accuracy, showcasing innovation in enhancing road safety analysis.</li>
+              <li>Developed and executed sophisticated object detection and classification pipelines for road infrastructure, employing images and 3D point clouds to improve accuracy and efficiency in infrastructure assessment.</li>
+              <li>Worked on the enhancement of 3D point cloud segmentation models using attention mechanisms.</li>
+              <li>Undertook the role of Lab Manager for the SALMALIS Lab, responsible for crucial lab operations including system maintenance, hardware setups, and software installations, ensuring optimal research environment and infrastructure.</li>
+              <li>Mentored 3 summer interns, giving them projects, tasks, and research material, while teaching them about different aspects of deep learning in transportation.</li>
+              <li>Two papers written on Generative Networks for road image data generation.</li>
+            </ul>
+            <p><strong>Stack:</strong> Python, PyTorch, TensorFlow, Keras, YOLOv5, Faster R-CNN, 3D Point Cloud Processing, Computer Vision, Generative Adversarial Networks (GANs).</p>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project__text">
+            <p class="eyebrow">Jan 2023 - Jun 2024 - Teaching Assistant</p>
+            <h2>University of British Columbia</h2>
+            <p>Served as a Teaching Assistant in different capacities for several courses, with responsibilities ranging from teaching lab sessions, in-class assistant, invigilation, exam and assignment grading, and holding problem-solving sessions for students, for classes with more than 100 students.</p>
+            <ul>
+              <li>Gained a satisfaction score of at least 90% for the classes.</li>
+              <li>ENGR 418 Machine Learning: Dr. Anas Chaaban</li>
+              <li>APSC 258 Applications of Engineering Design: Lab, Dr. Jahangir Hossain (3 lab sessions)</li>
+              <li>COSC 328 Introduction to Networks: Lab and Marker, Dr. Fatemeh Hendijani Fard (5 lab sessions)</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project__text">
+            <p class="eyebrow">Dec 2021 - May 2022 - Machine Learning Engineer, Data Analyst</p>
+            <h2>Aran Accelerator</h2>
+            <p>Built and deployed real-time predictive models for financial time series (LSTM/RNN) to a live market data feed with ~5s end-to-end latency; supported multi-granularity inputs (1-minute → 4-hour candles).</p>
+            <ul>
+              <li>Designed data ingestion & feature pipelines, reproducible training/evaluation harnesses, and experiment tracking; collaborated with engineering/product and ran code reviews to ship reliable services.</li>
+              <li>Explored reinforcement learning as an R&D track (policy variants, reward shaping); evaluated via backtests, documented assumptions/limitations, and translated findings into an iterative improvement plan.</li>
+              <li>Conducted comprehensive research and developed predictive models for asset price trends and decision-making algorithms, leveraging deep reinforcement learning techniques to automate trading, yielding profits up to 2000% in 2021-2022.</li>
+              <li>Executed data extraction, crawling, and transformation tasks, applying advanced techniques to unearth valuable insights from raw data.</li>
+              <li>Led the machine learning team of a startup, trained 5 interns, and collaborated with other teams for model integration into systems.</li>
+              <li>Presented findings, progress reports, and future plans to investors and managers at the company.</li>
+            </ul>
+            <p><strong>Stack:</strong> Python, TensorFlow, Deep Learning, Reinforcement Learning, LSTM, RNN, Time Series Analysis, Data Mining.</p>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project__text">
+            <p class="eyebrow">Dec 2020 - Feb 2022 - Undergraduate Research Assistant, IP-PBX Lab</p>
+            <h2>Ferdowsi University of Mashhad</h2>
+            <p>Researched and developed several anomaly detection methods in power consumption data. Worked with team on the design, and development of an anomaly detection and consumption forecasting platform as a service.</p>
+            <ul>
+              <li>Gained experience in machine learning, deep learning, data mining, and big data handling.</li>
+              <li>The developed models had 92% accuracy in trend prediction and 90% accuracy in fraud detection.</li>
+              <li>Two peer-reviewed papers regarding anomaly and fraud detection using AI and deep learning were published.</li>
+              <li>Managed 3 summer interns during my time in the lab, defining projects, evaluating their tasks, and holding weekly meetings with them.</li>
+            </ul>
+            <p><strong>Stack:</strong> Python, Deep Learning, Forecasting, Anomaly Detection, Big Data.</p>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project__text">
+            <p class="eyebrow">Sep 2018 - Jan 2022 - Teaching Assistant</p>
+            <h2>Ferdowsi University of Mashhad</h2>
+            <p>Teaching assistant for several courses, with responsibilities including teaching in class, assignment creation and grading, exam creation and grading, teaching labs, project defining and grading, and coding assistant.</p>
+            <ul>
+              <li>Object Oriented Designs of Systems (Master's class)</li>
+              <li>Object Oriented Designs of Systems (Bachelor's class)</li>
+              <li>Languages and Machines Theory (5 Classes)</li>
+              <li>Data Structures</li>
+              <li>Design & Analysis of Software Systems (2 Classes)</li>
+              <li>Software Engineering Lab (2 Classes)</li>
+              <li>Database (2 Classes)</li>
+              <li>Information Retrieval</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact">
+        <div class="contact__text">
+          <h2>Need references or deeper case studies?</h2>
+          <p>I can share architecture diagrams, experiment dashboards, and technical details. Feel free to reach out for more information.</p>
+        </div>
+        <div class="contact__actions">
+          <a class="btn btn--primary" href="mailto:ash.shahrestani@gmail.com">Email me</a>
+          <a class="btn btn--ghost" href="index.html#projects">See highlighted projects</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; <span id="year"></span> Afshin Shahrestani - Machine Learning Engineer</p>
+      <div class="footer__links">
+        <a href="https://www.linkedin.com/in/afshin-shahrestani/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="https://github.com/a-shahrestani" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="mailto:ash.shahrestani@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>

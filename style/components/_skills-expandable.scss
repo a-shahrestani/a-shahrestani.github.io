@@ -1,0 +1,117 @@
+// Expandable skill cards
+.skill-card {
+  background: $bg-section;
+  border: 1px solid $border;
+  border-radius: $radius;
+  overflow: visible;
+  transition: box-shadow $transition, transform $transition, border-color $transition;
+  display: flex;
+  flex-direction: column;
+  min-height: fit-content;
+
+  &:hover:not([aria-expanded="true"]) {
+    box-shadow: $shadow;
+    transform: translateY(-2px);
+    border-color: $primary;
+  }
+
+  &[aria-expanded="true"] {
+    border-color: $primary;
+    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2), $shadow;
+    border-image: $primary-gradient 1;
+  }
+}
+
+.skill-card__header {
+  width: 100%;
+  text-align: left;
+  padding: $space-6;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background $transition;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex-shrink: 0;
+
+  &:hover {
+    background: $muted;
+  }
+
+  &:focus {
+    outline: 2px solid $primary;
+    outline-offset: -2px;
+  }
+
+  h3 {
+    margin-bottom: $space-3;
+    font-size: clamp(20px, 2.5vw, 24px);
+    padding-right: $space-6;
+    flex: 1;
+  }
+}
+
+.skill-card__summary {
+  color: $text-muted;
+  margin-bottom: $space-3;
+  line-height: 1.6;
+  padding-right: $space-6;
+}
+
+.skill-card__icon {
+  position: absolute;
+  top: $space-6;
+  right: $space-6;
+  font-size: 12px;
+  color: $primary;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-card[aria-expanded="true"] .skill-card__icon {
+  transform: rotate(180deg);
+}
+
+.skill-card__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, padding 0.4s ease-out, opacity 0.3s ease-out;
+  padding: 0 $space-6;
+  opacity: 0;
+}
+
+.skill-card[aria-expanded="true"] .skill-card__content {
+  max-height: 2000px;
+  padding: 0 $space-6 $space-6;
+  opacity: 1;
+  overflow: visible;
+}
+
+.skill-card__content ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: $space-4;
+
+  li {
+    position: relative;
+    padding-left: $space-5;
+    margin-bottom: $space-3;
+      color: $text-muted;
+    line-height: 1.7;
+
+    &::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: $primary;
+      font-weight: 700;
+    }
+  }
+}
+

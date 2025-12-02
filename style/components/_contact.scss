@@ -1,0 +1,12 @@
+.contact {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: $space-6;
+
+  @include respond(md) { grid-template-columns: 1fr; }
+}
+
+.contact__text h2 { margin: $space-3 0; }
+
+.contact__actions { display: flex; gap: $space-3; flex-wrap: wrap; }

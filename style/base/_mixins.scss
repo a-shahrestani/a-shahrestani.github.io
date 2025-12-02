@@ -1,0 +1,10 @@
+@mixin respond($bp) {
+  @if $bp == md { @media (max-width: $bp-md) { @content; } }
+  @if $bp == sm { @media (max-width: $bp-sm) { @content; } }
+}
+
+@mixin gradient-text {
+  background: linear-gradient(135deg, $primary, $secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
