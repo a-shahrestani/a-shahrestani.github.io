@@ -61,7 +61,14 @@ main {
     
     // Reduce padding on mobile
     @media (max-width: 1200px) {
-      padding-top: 24px;
+      padding-top: 24px; // Minimal padding for non-first sections
+    }
+    
+    // First section gets more padding for header clearance
+    &:first-of-type {
+      @media (max-width: 1200px) {
+        padding-top: calc(60px + 24px);
+      }
     }
   }
 
@@ -73,22 +80,30 @@ main {
     opacity: 1;
     visibility: visible;
     overflow-y: visible;
-    padding-top: 24px;
+    padding-top: 24px; // Minimal padding for non-first sections
     padding-bottom: 24px;
     
     &:first-of-type {
-      padding-top: 24px;
+      padding-top: calc(60px + 24px); // Header height + spacing for first section only
     }
   }
 
   @include respond(md) {
     padding-top: 24px;
     padding-bottom: 24px;
+    
+    &:first-of-type {
+      padding-top: calc(60px + 24px);
+    }
   }
 
   @include respond(sm) {
     padding-top: 24px;
     padding-bottom: 24px;
+    
+    &:first-of-type {
+      padding-top: calc(60px + 24px);
+    }
   }
 }
 

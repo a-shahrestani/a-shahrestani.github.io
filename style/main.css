@@ -161,6 +161,11 @@ main {
   }
 }
 @media (max-width: 1200px) {
+  .section.section--scrollable:first-of-type {
+    padding-top: 84px;
+  }
+}
+@media (max-width: 1200px) {
   .section {
     height: auto;
     min-height: auto;
@@ -172,7 +177,7 @@ main {
     padding-bottom: 24px;
   }
   .section:first-of-type {
-    padding-top: 24px;
+    padding-top: 84px;
   }
 }
 @media (max-width: 900px) {
@@ -180,11 +185,17 @@ main {
     padding-top: 24px;
     padding-bottom: 24px;
   }
+  .section:first-of-type {
+    padding-top: 84px;
+  }
 }
 @media (max-width: 640px) {
   .section {
     padding-top: 24px;
     padding-bottom: 24px;
+  }
+  .section:first-of-type {
+    padding-top: 84px;
   }
 }
 
