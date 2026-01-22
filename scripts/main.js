@@ -1,6 +1,34 @@
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+// Mobile navigation toggle
+const navToggle = document.querySelector('.nav__toggle');
+const navLinks = document.querySelector('.nav__links');
+
+if (navToggle && navLinks) {
+  navToggle.addEventListener('click', () => {
+    const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', !isExpanded);
+    navLinks.classList.toggle('active');
+  });
+  
+  // Close menu when clicking a link
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navToggle.setAttribute('aria-expanded', 'false');
+      navLinks.classList.remove('active');
+    });
+  });
+  
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
+      navToggle.setAttribute('aria-expanded', 'false');
+      navLinks.classList.remove('active');
+    }
+  });
+}
+
 // Full-screen section switching
 const sections = document.querySelectorAll('section[id]');
 const sidebarLinks = document.querySelectorAll('.sidebar__link');
@@ -87,12 +115,20 @@ function showSection(sectionId, scrollToTop = true) {
 }
 
 // Scroll-based navigation - requires 2 scrolls to switch sections
+// Only enable on desktop (above 1200px)
 let scrollTimeout;
 let scrollCount = 0;
 let lastScrollDirection = 0;
 let scrollResetTimeout;
 
+function isDesktop() {
+  return window.innerWidth > 1200;
+}
+
 window.addEventListener('wheel', (e) => {
+  // Only enable section switching on desktop
+  if (!isDesktop()) return;
+  
   if (isScrolling) return;
   
   const activeSection = document.querySelector('.section.active');
@@ -160,18 +196,36 @@ window.addEventListener('wheel', (e) => {
 const currentPage = document.body.getAttribute('data-page');
 
 // Initialize: Check for hash in URL, otherwise show hero section
+// Only use section switching on desktop
 const initialHash = window.location.hash;
-if (initialHash && initialHash.length > 1) {
-  const targetSectionId = initialHash.substring(1);
-  // Check if this section exists on the page
-  const targetSection = document.getElementById(targetSectionId);
-  if (targetSection) {
-    showSection(targetSectionId);
+if (isDesktop()) {
+  if (initialHash && initialHash.length > 1) {
+    const targetSectionId = initialHash.substring(1);
+    // Check if this section exists on the page
+    const targetSection = document.getElementById(targetSectionId);
+    if (targetSection) {
+      showSection(targetSectionId);
+    } else {
+      showSection('hero');
+    }
   } else {
     showSection('hero');
   }
 } else {
-  showSection('hero');
+  // On mobile, show all sections
+  sections.forEach(section => {
+    section.classList.add('active');
+  });
+  
+  // If there's a hash, scroll to it
+  if (initialHash && initialHash.length > 1) {
+    setTimeout(() => {
+      const targetElement = document.querySelector(initialHash);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
+  }
 }
 
 // Sidebar link clicks - use event delegation to ensure it works
@@ -219,7 +273,9 @@ document.addEventListener('click', (e) => {
       }
       
       // Navigate to projects section first
-      showSection('projects', false);
+      if (isDesktop()) {
+        showSection('projects', false);
+      }
       
       // Then scroll to the specific project
       setTimeout(() => {
@@ -235,22 +291,40 @@ document.addEventListener('click', (e) => {
       }, 300);
     } else {
       // Regular navigation
-      showSection(sectionId);
+      if (isDesktop()) {
+        showSection(sectionId);
+      }
     }
   }
 });
 
 // Active sidebar link is now handled by showSection function for all pages
 
-// Prevent default scroll behavior for anchor links
-const navLinks = document.querySelectorAll('a[href^="#"]');
-navLinks.forEach(link => {
+// Prevent default scroll behavior for anchor links on desktop
+const allAnchorLinks = document.querySelectorAll('a[href^="#"]');
+allAnchorLinks.forEach(link => {
   link.addEventListener('click', evt => {
     const targetId = link.getAttribute('href');
     if (targetId && targetId.startsWith('#')) {
       evt.preventDefault();
       const sectionId = targetId.substring(1);
-      showSection(sectionId);
+      
+      if (isDesktop()) {
+        showSection(sectionId);
+      } else {
+        // On mobile, scroll to the section
+        const targetElement = document.getElementById(sectionId);
+        if (targetElement) {
+          const navHeight = 60;
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }
     }
   });
 });

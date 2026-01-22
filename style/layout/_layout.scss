@@ -2,6 +2,12 @@ main {
   position: relative;
   height: 100vh;
   overflow: hidden;
+  
+  // Enable scrolling on mobile/tablet
+  @media (max-width: 1200px) {
+    height: auto;
+    overflow: visible;
+  }
 }
 
 .container {
@@ -52,6 +58,22 @@ main {
     overflow-y: auto;
     padding-top: calc($space-10 + 60px);
     padding-bottom: $space-6;
+  }
+
+  // On mobile/tablet, show all sections in normal flow
+  @media (max-width: 1200px) {
+    height: auto;
+    min-height: auto;
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    overflow-y: visible;
+    padding-top: calc($space-8 + 80px);
+    padding-bottom: $space-8;
+    
+    &:first-of-type {
+      padding-top: calc($space-10 + 80px);
+    }
   }
 
   @include respond(md) {

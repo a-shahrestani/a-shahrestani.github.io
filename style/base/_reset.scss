@@ -7,6 +7,12 @@ img { max-width: 100%; display: block; }
 html, body {
   height: 100%;
   overflow: hidden;
+  
+  // Enable scrolling on mobile/tablet
+  @media (max-width: 1200px) {
+    height: auto;
+    overflow-y: auto;
+  }
 }
 
 body {
