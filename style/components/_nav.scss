@@ -7,6 +7,12 @@
   background: rgba(10, 10, 10, 0.9);
   z-index: 100;
   border-bottom: 1px solid $border;
+  
+  // Make transparent on mobile
+  @media (max-width: 1200px) {
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px);
+  }
 }
 
 .nav__inner {
@@ -36,7 +42,8 @@
   font-weight: 700;
   font-size: clamp(16px, 2vw, 18px);
   color: $text;
-  z-index: 102;
+  z-index: 101;
+  position: relative;
 }
 
 .nav__toggle {
@@ -47,7 +54,8 @@
   border: none;
   cursor: pointer;
   padding: 8px;
-  z-index: 102;
+  z-index: 103;
+  position: relative;
   
   span {
     width: 24px;
@@ -69,7 +77,8 @@
     }
   }
   
-  @media (max-width: 900px) {
+  // Show at larger breakpoint to catch all mobile devices
+  @media (max-width: 1024px) {
     display: flex;
   }
 }
@@ -91,7 +100,8 @@
     }
   }
   
-  @media (max-width: 900px) {
+  // Show at larger breakpoint to catch all mobile devices
+  @media (max-width: 1024px) {
     position: fixed;
     top: 0;
     right: -100%;
@@ -107,6 +117,7 @@
     border-left: 1px solid $border;
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
     overflow-y: auto;
+    z-index: 102;
     
     &.active {
       right: 0;
@@ -136,7 +147,7 @@
   .nav__links a {
     padding: 6px 8px;
     
-    @media (max-width: 900px) {
+    @media (max-width: 1024px) {
       padding: 12px 16px;
       font-size: 16px;
     }

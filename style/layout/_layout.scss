@@ -58,6 +58,11 @@ main {
     overflow-y: auto;
     padding-top: calc($space-10 + 60px);
     padding-bottom: $space-6;
+    
+    // Reduce padding on mobile
+    @media (max-width: 1200px) {
+      padding-top: 24px;
+    }
   }
 
   // On mobile/tablet, show all sections in normal flow
@@ -68,22 +73,22 @@ main {
     opacity: 1;
     visibility: visible;
     overflow-y: visible;
-    padding-top: calc($space-8 + 80px);
-    padding-bottom: $space-8;
+    padding-top: 24px;
+    padding-bottom: 24px;
     
     &:first-of-type {
-      padding-top: calc($space-10 + 80px);
+      padding-top: 24px;
     }
   }
 
   @include respond(md) {
-    padding-top: calc($space-8 + 60px);
-    padding-bottom: $space-8;
+    padding-top: 24px;
+    padding-bottom: 24px;
   }
 
   @include respond(sm) {
-    padding-top: calc($space-7 + 60px);
-    padding-bottom: $space-7;
+    padding-top: 24px;
+    padding-bottom: 24px;
   }
 }
 

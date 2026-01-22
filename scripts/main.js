@@ -125,6 +125,10 @@ function isDesktop() {
   return window.innerWidth > 1200;
 }
 
+function isMobile() {
+  return window.innerWidth <= 1024;
+}
+
 window.addEventListener('wheel', (e) => {
   // Only enable section switching on desktop
   if (!isDesktop()) return;
@@ -312,10 +316,10 @@ allAnchorLinks.forEach(link => {
       if (isDesktop()) {
         showSection(sectionId);
       } else {
-        // On mobile, scroll to the section
+        // On mobile, scroll to the section with minimal offset
         const targetElement = document.getElementById(sectionId);
         if (targetElement) {
-          const navHeight = 60;
+          const navHeight = 70; // Account for fixed nav height
           const elementPosition = targetElement.getBoundingClientRect().top;
           const offsetPosition = elementPosition + window.pageYOffset - navHeight;
           
